@@ -1,0 +1,582 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-16 00:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\Main\forms.py:16 .\Main\models.py:45
+msgid "For Egypt Only"
+msgstr ""
+
+#: .\Main\forms.py:17
+msgid "6th of October"
+msgstr ""
+
+#: .\Main\forms.py:18
+msgid "Al Sharqia"
+msgstr ""
+
+#: .\Main\forms.py:19
+msgid "alexandria"
+msgstr ""
+
+#: .\Main\forms.py:20
+msgid "Aswan"
+msgstr ""
+
+#: .\Main\forms.py:21
+msgid "Asyut"
+msgstr ""
+
+#: .\Main\forms.py:22
+msgid "Beheira"
+msgstr ""
+
+#: .\Main\forms.py:23
+msgid "Beni Suef"
+msgstr ""
+
+#: .\Main\forms.py:24
+msgid "Cairo"
+msgstr ""
+
+#: .\Main\forms.py:25
+msgid "Dakahlia"
+msgstr ""
+
+#: .\Main\forms.py:26
+msgid "Damietta "
+msgstr ""
+
+#: .\Main\forms.py:27
+msgid "Faiyum"
+msgstr ""
+
+#: .\Main\forms.py:28
+msgid "Gharbia"
+msgstr ""
+
+#: .\Main\forms.py:29
+msgid "Giza"
+msgstr ""
+
+#: .\Main\forms.py:30
+msgid "Ismailia"
+msgstr ""
+
+#: .\Main\forms.py:31
+msgid "Kafr El Sheikh"
+msgstr ""
+
+#: .\Main\forms.py:32
+msgid "Luxor"
+msgstr ""
+
+#: .\Main\forms.py:33
+msgid "Matruh"
+msgstr ""
+
+#: .\Main\forms.py:34
+msgid "Minya"
+msgstr ""
+
+#: .\Main\forms.py:35
+msgid "Monufia"
+msgstr ""
+
+#: .\Main\forms.py:36
+msgid "New Valley"
+msgstr ""
+
+#: .\Main\forms.py:37
+msgid "North Sinai"
+msgstr ""
+
+#: .\Main\forms.py:38
+msgid "Port Said"
+msgstr ""
+
+#: .\Main\forms.py:39
+msgid "Qalyubia "
+msgstr ""
+
+#: .\Main\forms.py:40
+msgid "Qena"
+msgstr ""
+
+#: .\Main\forms.py:41
+msgid "Red Sea"
+msgstr ""
+
+#: .\Main\forms.py:42
+msgid "Sharqia "
+msgstr ""
+
+#: .\Main\forms.py:43
+msgid "Sohag"
+msgstr ""
+
+#: .\Main\forms.py:44
+msgid "South Sinai"
+msgstr ""
+
+#: .\Main\forms.py:45
+msgid "Suez"
+msgstr ""
+
+#: .\Main\forms.py:53 .\Main\templates\Main\checkout.html:33
+msgid "First Name"
+msgstr ""
+
+#: .\Main\forms.py:58 .\Main\templates\Main\checkout.html:37
+msgid "Last Name"
+msgstr ""
+
+#: .\Main\forms.py:65
+msgid "Mobile NO"
+msgstr ""
+
+#: .\Main\forms.py:68
+msgid "1234 Main St"
+msgstr ""
+
+#: .\Main\forms.py:72
+msgid "Apartment or suite"
+msgstr ""
+
+#: .\Main\forms.py:77
+msgid "(select country)"
+msgstr ""
+
+#: .\Main\forms.py:83 .\Main\templates\Main\checkout.html:83
+msgid "Zip code"
+msgstr ""
+
+#: .\Main\forms.py:179
+msgid "Your_Name"
+msgstr ""
+
+#: .\Main\forms.py:181
+msgid "Your Name"
+msgstr ""
+
+#: .\Main\forms.py:184
+msgid "Your_Email"
+msgstr ""
+
+#: .\Main\forms.py:186
+msgid "Your Email"
+msgstr ""
+
+#: .\Main\forms.py:190
+msgid "Your_Phone"
+msgstr ""
+
+#: .\Main\forms.py:192
+msgid "Your Phone"
+msgstr ""
+
+#: .\Main\forms.py:195
+msgid "Your_Message"
+msgstr ""
+
+#: .\Main\forms.py:197
+msgid "Your Message"
+msgstr ""
+
+#: .\Main\templates\Main\Book.html:15
+msgid "Egypt Fabrics | Products"
+msgstr ""
+
+#: .\Main\templates\Main\Book.html:96
+#: .\Main\templates\Main\RegularNavbar.html:434
+msgid "Buy Now"
+msgstr ""
+
+#: .\Main\templates\Main\Book.html:134
+msgid "&laquo;"
+msgstr ""
+
+#: .\Main\templates\Main\Book.html:135
+msgid "Previous"
+msgstr ""
+
+#: .\Main\templates\Main\Book.html:142
+msgid "(current)"
+msgstr ""
+
+#: .\Main\templates\Main\Book.html:149
+msgid "&raquo;"
+msgstr ""
+
+#: .\Main\templates\Main\Book.html:150
+msgid "Next"
+msgstr ""
+
+#: .\Main\templates\Main\Contact.html:8
+msgid "Egypt Fabrics | Contact"
+msgstr ""
+
+#: .\Main\templates\Main\Contact.html:44
+msgid "Contact Us"
+msgstr ""
+
+#: .\Main\templates\Main\Contact.html:50
+#: .\Main\templates\Main\checkout.html:131
+msgid "Submit"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:14 .\Main\templates\Main\product.html:20
+msgid "Egypt Fabrics"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:42
+msgid "Cotton Bath Towels"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:44
+#, python-format
+msgid ""
+"\n"
+"\t\t\t  \n"
+"\t\t\t Add a touch of luxury to your bathroom . Our Towels are made from "
+"100%% Egyptian cotton, the towel has gone through a special combing process "
+"to achieve a super soft and absorbent pile.We guarntee a quality towel for "
+"the ultimate bath time experience. "
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:60
+msgid "The Oxford pillow case"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:62
+#, python-format
+msgid ""
+"\n"
+"\t\t\t  \n"
+"\t\tThe Oxford pillow cases set is the Fancy version of the standard pillow "
+"case, and is made with an additional fabric border which surrounds all four "
+"edges of the standard case.\n"
+"\n"
+"\t\t\t\tSpoil yourself and order yours now.\n"
+"\t\t\t\t\n"
+"\t\t\t\t100%% Sateen Cotton 400TC \t"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:79
+msgid "Percale Sheets"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:81
+#, python-format
+msgid ""
+"\n"
+"\t\t\t  \n"
+"\t\t\tDreaming about sleeping on five-star hotel-quality sheets? Then you’re "
+"thinking about percale sheets 🛏️ Percale are smooth, luxurious & made of "
+"breathable 100 %% cotton. "
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:96 .\Main\templates\Main\Home.html:328
+msgid "Sateen Fitted Sheet Set 400TC"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:104
+msgid ""
+" Sateen sheets are 100 percent cotton sheets with a high thread count and a "
+"lustrous sheen. They are woven from combed, carded, or long-fiber cotton "
+"threads that are then mercerized, meaning they’re soaked in lye and then in "
+"acid. This process not only strengthens the cotton fibers and makes them "
+"more durable, but also gives sateen sheets their signature  sheen and helps "
+"them accept dye evenly. "
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:121
+msgid "Classic Cotton Duvet Cover 500TC"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:124
+msgid ""
+"\n"
+"\t\t\t  \n"
+"\t\t\tA duvet cover is a protective layer that slips over the duvet and has "
+"a closure. Because duvets can be expensive and difficult to clean, duvet "
+"covers are useful because they protect your duvet or quilt during use and "
+"are easily removed and easy to wash.\n"
+"\t\t\t"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:160 .\Main\templates\Main\Home.html:174
+#: .\Main\templates\Main\Home.html:185
+#, python-format
+msgid "100%% Egyptian Cotton "
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:162 .\Main\templates\Main\Home.html:176
+#: .\Main\templates\Main\Home.html:186
+msgid "Shop Now"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:199
+msgid "Popular Categories"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:258
+msgid "Best Selling Products"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:318
+msgid "Pure White Sateen Duvet Set"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:319
+#, python-format
+msgid ""
+"\n"
+"\t  \n"
+"\t 100%% Lyocell. Sateen-woven bed linen in lyocell has a pronounced luster, "
+"feels soft as silk and is pleasant to sleep in. The decorative embroidery "
+"makes the pattern and colors come alive "
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:323 .\Main\templates\Main\Home.html:332
+msgid "Go To Shop"
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:329
+msgid ""
+"\n"
+"\t  \n"
+"\t  Rest easy with this hemstitch solid color sheet set. Constructed with a "
+"cotton sateen weave, this 400 thread count set features a lustrous, "
+"lightweight feel. Choose from a variety of rich colors to complement a "
+"modern or cottage bedroom vibe."
+msgstr ""
+
+#: .\Main\templates\Main\Home.html:368
+msgid "Connect Socially"
+msgstr ""
+
+#: .\Main\templates\Main\RegularNavbar.html:178
+
+msgid " Home "
+msgstr "Startseite"
+
+#: .\Main\templates\Main\RegularNavbar.html:180
+msgid "About"
+msgstr "Über uns"
+
+#: .\Main\templates\Main\RegularNavbar.html:182
+msgid "Contact"
+msgstr "Kontakt"
+
+#: .\Main\templates\Main\RegularNavbar.html:306
+msgid "Products"
+msgstr "Produkte"
+
+#: .\Main\templates\Main\RegularNavbar.html:367
+msgid "Type &amp; Hit Enter.."
+msgstr ""
+
+#: .\Main\templates\Main\about.html:19
+msgid "Egypt Fabrics | About"
+msgstr ""
+
+#: .\Main\templates\Main\about.html:76
+msgid "Our Mission"
+msgstr ""
+
+#: .\Main\templates\Main\about.html:77
+msgid ""
+" We focus exclusively on Egyptian coton for a whole bunch of great reasons, "
+"But when it comes right down to it, we just love the way our products look "
+"and feel. Our products are made with quality materials, high production "
+"standards, and ethical manufacturing practices. We’ve met all of our "
+"production partners in person and pride ourselves on these relationships "
+"with quality manufacturers around the world."
+msgstr ""
+
+#: .\Main\templates\Main\about.html:107
+msgid "Our Vision"
+msgstr ""
+
+#: .\Main\templates\Main\about.html:108
+msgid ""
+"\n"
+"                    Egypt Fabrics believes everyone should live in a home "
+"they love. Through technology and innovation, Egypt Fabrics makes it "
+"possible for shoppers to quickly and easily find exactly what they want from "
+"a selection of high quality products. Committed to delighting its customers "
+"every step of the way, Egypt Fabrics is reinventing the way people shop for "
+"their Homes/Bed rooms - from product discovery to final delivery."
+msgstr ""
+
+#: .\Main\templates\Main\about.html:147
+msgid "Seed-to-Stitch"
+msgstr ""
+
+#: .\Main\templates\Main\about.html:149
+msgid ""
+"\n"
+"                    Our sheets are what we call 'seed-to-stitch'. made in "
+"the Egypt. The entire manufacturing process and every single part of our "
+"product - from growing the cotton, to spinning the yarn, to weaving the "
+"fabric, to our military-grade fabrics, recycled packaging, and woven tags - "
+"is made here in Egypt. "
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:12
+msgid "Egypt Fabrics | Shipping Details"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:20
+msgid "Shipping Form"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:27
+msgid "Shipping Details"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:45
+msgid "Email(optional)"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:49
+msgid "Mobile"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:62
+msgid "Street"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:67
+msgid "Apartment"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:75
+msgid "Country"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:78
+msgid "Please select a valid country."
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:86
+msgid "Please select a valid zip."
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:90
+msgid "Governates"
+msgstr ""
+
+#: .\Main\templates\Main\checkout.html:93
+msgid " Please select a valid zip."
+msgstr ""
+
+#: .\Main\templates\Main\order_snippet.html:52
+msgid "Types In Your Cart"
+msgstr ""
+
+#: .\Main\templates\Main\order_snippet.html:62
+#: .\Main\templates\Main\order_snippet.html:68
+#: .\Main\templates\Main\product.html:116
+msgid "LE"
+msgstr ""
+
+#: .\Main\templates\Main\order_snippet.html:67
+msgid "Total"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:8
+msgid "Egypt Fabrics | Order Summary"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:17
+msgid "Order Summary"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:22
+msgid "Product Name"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:23
+msgid "Price Per Item"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:24
+msgid "Your Items"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:26
+msgid "Total Items Price"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:46
+msgid "Saving"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:57
+msgid "Your cart is empty"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:62
+msgid "Continue shopping"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:68
+msgid "Coupon"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:74
+msgid "Order Total"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:82
+msgid "Proceed to checkout"
+msgstr ""
+
+#: .\Main\templates\Main\order_summary.html:83
+msgid "Continue Shopping"
+msgstr ""
+
+#: .\Main\templates\Main\product.html:111
+msgid "Prices and sizes"
+msgstr ""
+
+#: .\Main\templates\Main\product.html:129
+msgid "Add To Cart"
+msgstr ""
+
+#: .\Main\templates\Main\product.html:145
+msgid "Product Description"
+msgstr ""
+
+#: .\Main\templates\Main\thankyou.html:8
+msgid "Egypt Fabrics | Thanks"
+msgstr ""
+
+#: .\Main\templates\Main\thankyou.html:21
+msgid "Thank You For Your Order!"
+msgstr ""
+
+#: .\Main\templates\Main\thankyou.html:25
+msgid "Contact us"
+msgstr ""
+
+#: .\Main\templates\Main\thankyou.html:28
+msgid "Continue to homepage"
+msgstr ""

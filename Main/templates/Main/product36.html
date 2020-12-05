@@ -1,0 +1,227 @@
+{% extends "Main/Base.html" %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{{ form.media }}
+{% bootstrap_javascript jquery='full' %}
+
+{% block extrahead %}
+{{ form.media }}     
+{% endblock %}
+{% block content %}
+
+
+{% include 'Main/RegularNavbar.html'%}
+
+
+
+
+<title>{% trans "Egypt Fabrics" %} | {{object.title}} </title>
+
+  <main class="mt-5 pt-4">
+    <br>
+    <br>
+    <div class="container dark-grey-text ">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+        {% if object.image %}
+        <!--Grid column-->
+        <div class="col-md-6 mb-1">
+        
+
+          <img src="{{  object.image.url }}" class="card-img-top">
+
+        </div>
+
+        {% elif object.green %}
+      <div class="col-md-6 mb-4">
+        
+
+          <img src="{{  object.green.url }}" class="card-img-top">
+
+        </div>
+
+          {% elif object.red %}
+      <div class="col-md-6 mb-4">
+        
+
+          <img src="{{  object.red.url }}" class="card-img-top">
+
+        </div> 
+      {% elif object.blue %}
+      <div class="col-md-6 mb-4">
+        
+
+          <img src="{{  object.blue.url }}" class="card-img-top">
+
+        </div> 
+
+        {% endif %}
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-2">
+           
+           {% if object.company %}
+             
+         
+                <h3> {{ object.company }} </h3> 
+                {% endif %}
+            </div>
+    <div class="mb-2">
+      <hr>
+              
+              <h1>  {{ object.title|title}} </h1> 
+            <hr>
+
+            </div>
+ 
+         
+
+          
+          
+            
+{% comment %}
+
+    
+     <p class="lead">
+      {% if object.discount_price %}
+      <span class="mr-1">
+        <del>{{ object.price }}</del>
+      </span>
+      <span>{{ object.discount_price }}</span>
+      {% else %}
+      
+      
+      <h5 style=" text-align: left !important;"> {% trans "Price" %} : {% for ite in object.variation_set.all %} {{ ite.pricy}}0 -       {%endfor%} {% trans "LE" %}         </h5>  
+
+      {% endif %}
+    </p>
+      
+{% endcomment %}
+
+
+<style>
+
+   option:hover{
+    color: black !important;
+    background-color: white !important;
+  }
+</style>
+  <div class="col-md-10 pull-left">
+    <h2  style="background-color: brown; color:white; text-align: center; padding: 6px !important;">{% trans "Prices and sizes" %}</h2> 
+    <form action="{{ object.get_add_to_cart_url }}" method="POST" name="object.get_add_to_cart_url"> {% csrf_token %}
+      {% if object.variation_set.all %}
+        
+     
+      <select name="size" class="form-control form-control-lg" style="color: white !important;">
+        {% for ite in object.variation_set.all %}
+        <option value="{{ite.pricy}}      {{ite.Title}}" > {{ite.Title}} - {% trans "LE" %} {{ite.pricy}}0</option>
+        {% endfor %}
+      </select>
+      {% endif %}
+    
+    </div>
+    <tr>
+      <br>
+      <br>
+ 
+      <td colspan="5">
+        <button type="submit" class='btn btn-primary float-left ml-3'> 
+  
+         {% trans "Add To Cart" %}         <i class="fas fa-shopping-cart ml-1"></i>
+ 
+  </button>
+</tr>
+</form>    
+
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<p class="lead font-weight-bold" style="color: black; text-align: center !important;">{% trans "Product Description" %} </p>
+<hr>
+            <p class="font-weight-normal">{{ object.description|safe }}</p>
+
+        
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+      
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+       
+        <!--Grid column-->
+
+        <!--Grid column-->
+      
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+
+
+    
+  </main>
+  
+<script>
+
+  $('document').ready(function(){
+
+ 
+    $('.requiredField').css('color', 'white');
+    $('.requiredField').css('border', '1px solid black');
+     $('.form-control').css('background-color', '#333');
+     $('.requiredField').css('background-color', '#333');
+     $('#top-search').hide();
+
+
+
+
+
+
+  });
+
+</script>
+
+<script>
+  $('document').ready(function(){
+    $('#top-search').hide();
+    $('#langlang').hide();
+  });
+</script>
+
+ });
+</script>
+
+
+
+{% endblock content %}

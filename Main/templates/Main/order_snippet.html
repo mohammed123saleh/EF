@@ -1,0 +1,75 @@
+
+
+{% load i18n %}
+
+
+<div class="col-md-12 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted"></span>
+   
+    </h4>
+    <ul class="list-group mb-3 z-depth-1">
+ 
+   
+    <li class="list-group-item d-flex justify-content-between">
+        {% for order_item in order.items.all %}
+        <a href="#">
+            <i class="fas fa-check-circle" style="color: green;" >  {{ order_item.quantity }}      </i>  
+        <img style="width: 75px !important; height: 75px !important;" src="{{order_item.item.image.url }}" alt="">
+        
+  
+     
+        
+    </a>
+       
+          
+      
+       
+        {% endfor %}
+    </li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-12 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">{% trans "Types In Your Cart" %} </span>
+    <span class="badge badge-secondary badge-pill">{{ order.items.count }}</span>
+    </h4>
+    <ul class="list-group mb-3 z-depth-1">
+    {% for order_item in order.items.all %}
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+        <h6 class="my-0">{{ order_item.quantity }} x {{ order_item.item.title}}</h6>
+        <small class="text-muted">{{ order_item.item.description|safe|truncatechars:500}}</small>
+        </div>
+        <span class="text-muted" style="text-align: center !important; color: white !important; font-size: 10px !important; background-color:darkred; height: 50px !important; padding: 6px !important;">{{ order_item.get_final_price }}0 {% trans "LE" %}</span>
+    </li>
+    {% endfor %}
+   
+    <li class="list-group-item d-flex justify-content-between" style="color: white !important; font-size: 10px !important; background-color:darkred; height: 50px !important; padding: 6px !important;">
+        <span>{% trans "Total" %}   </span>
+        <strong>{% trans "LE" %}{{ order.get_total }}0</strong>
+    </li>
+    </ul>
+
+  
+
+</div>
+

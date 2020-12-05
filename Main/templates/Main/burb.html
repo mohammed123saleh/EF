@@ -1,0 +1,34 @@
+
+
+
+    <div class="top-cart-item">
+        <div class="top-cart-item-image">
+        <a href="#"> {% for  order_item in order.items.all  %}<img src="{{order_item.item.image.url }}" alt="{{order_item.item.title}}" /></a> {% endfor %}
+</div>
+        <div class="top-cart-item-desc">
+            <div class="top-cart-item-desc-title">
+                {% for  order_item in order.items.all  %}  <a href="#">{{order_item.item.title}}</a> {% endfor %}
+    {% for  order_item in order.items.all  %}  
+    {% if order_item.discount_price %}
+      
+   
+  
+    <span class="top-cart-item-price d-block">
+        {{order_item.item.discount_price}}</span> 
+        {%else%}
+        <span class="top-cart-item-price d-block">
+        {{order_item.item.price}}</span> 
+        {% endif %}
+        {% endfor %}
+        </div>
+        {% for order_item in order.items.all  %}
+        <div class="top-cart-item-quantity"> x {{ order_item.quantity }}</div> {% endfor %}
+        </div>
+    </div>
+
+
+    
+   
+    
+              
+ 

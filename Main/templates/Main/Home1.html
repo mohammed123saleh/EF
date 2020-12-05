@@ -1,0 +1,3124 @@
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Egypt Fabrics</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'><link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+:root {
+  --body-bg-color: #e5f4f9;
+  --body-color-light: #8b939c;
+  --body-font: "Roboto", sans-serif;
+  --page-bg-color: #f2f5f7;
+  --body-color: #3d4954;
+  --border-color: #b8bec3;
+  --placeholder: #ccd0d2;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='946' height='473' viewBox='0 0 1600 800'%3E%3Cpath fill='%23e436ff' d='M1102.5 734.8c2.5-1.2 24.8-8.6 25.6-7.5.5.7-3.9 23.8-4.6 24.5C1123.3 752.1 1107.5 739.5 1102.5 734.8zM1226.3 229.1c0-.1-4.9-9.4-7-14.2-.1-.3-.3-1.1-.4-1.6-.1-.4-.3-.7-.6-.9-.3-.2-.6-.1-.8.1l-13.1 12.3c0 0 0 0 0 0-.2.2-.3.5-.4.8 0 .3 0 .7.2 1 .1.1 1.4 2.5 2.1 3.6 2.4 3.7 6.5 12.1 6.5 12.2.2.3.4.5.7.6.3 0 .5-.1.7-.3 0 0 1.8-2.5 2.7-3.6 1.5-1.6 3-3.2 4.6-4.7 1.2-1.2 1.6-1.4 2.1-1.6.5-.3 1.1-.5 2.5-1.9C1226.5 230.4 1226.6 229.6 1226.3 229.1zM33 770.3C33 770.3 33 770.3 33 770.3c0-.7-.5-1.2-1.2-1.2-.1 0-.3 0-.4.1-1.6.2-14.3.1-22.2 0-.3 0-.6.1-.9.4-.2.2-.4.5-.4.9 0 .2 0 4.9.1 5.9l.4 13.6c0 .3.2.6.4.9.2.2.5.3.8.3 0 0 .1 0 .1 0 7.3-.7 14.7-.9 22-.6.3 0 .7-.1.9-.3.2-.2.4-.6.4-.9C32.9 783.3 32.9 776.2 33 770.3z'/%3E%3Cpath fill='%232ee7ff' d='M171.1 383.4c1.3-2.5 14.3-22 15.6-21.6.8.3 11.5 21.2 11.5 22.1C198.1 384.2 177.9 384 171.1 383.4zM596.4 711.8c-.1-.1-6.7-8.2-9.7-12.5-.2-.3-.5-1-.7-1.5-.2-.4-.4-.7-.7-.8-.3-.1-.6 0-.8.3L574 712c0 0 0 0 0 0-.2.2-.2.5-.2.9 0 .3.2.7.4.9.1.1 1.8 2.2 2.8 3.1 3.1 3.1 8.8 10.5 8.9 10.6.2.3.5.4.8.4.3 0 .5-.2.6-.5 0 0 1.2-2.8 2-4.1 1.1-1.9 2.3-3.7 3.5-5.5.9-1.4 1.3-1.7 1.7-2 .5-.4 1-.7 2.1-2.4C596.9 713.1 596.8 712.3 596.4 711.8zM727.5 179.9C727.5 179.9 727.5 179.9 727.5 179.9c.6.2 1.3-.2 1.4-.8 0-.1 0-.2 0-.4.2-1.4 2.8-12.6 4.5-19.5.1-.3 0-.6-.2-.8-.2-.3-.5-.4-.8-.5-.2 0-4.7-1.1-5.7-1.3l-13.4-2.7c-.3-.1-.7 0-.9.2-.2.2-.4.4-.5.6 0 0 0 .1 0 .1-.8 6.5-2.2 13.1-3.9 19.4-.1.3 0 .6.2.9.2.3.5.4.8.5C714.8 176.9 721.7 178.5 727.5 179.9zM728.5 178.1c-.1-.1-.2-.2-.4-.2C728.3 177.9 728.4 178 728.5 178.1z'/%3E%3Cg fill='%23FFF'%3E%3Cpath d='M699.6 472.7c-1.5 0-2.8-.8-3.5-2.3-.8-1.9 0-4.2 1.9-5 3.7-1.6 6.8-4.7 8.4-8.5 1.6-3.8 1.7-8.1.2-11.9-.3-.9-.8-1.8-1.2-2.8-.8-1.7-1.8-3.7-2.3-5.9-.9-4.1-.2-8.6 2-12.8 1.7-3.1 4.1-6.1 7.6-9.1 1.6-1.4 4-1.2 5.3.4 1.4 1.6 1.2 4-.4 5.3-2.8 2.5-4.7 4.7-5.9 7-1.4 2.6-1.9 5.3-1.3 7.6.3 1.4 1 2.8 1.7 4.3.5 1.1 1 2.2 1.5 3.3 2.1 5.6 2 12-.3 17.6-2.3 5.5-6.8 10.1-12.3 12.5C700.6 472.6 700.1 472.7 699.6 472.7zM740.4 421.4c1.5-.2 3 .5 3.8 1.9 1.1 1.8.4 4.2-1.4 5.3-3.7 2.1-6.4 5.6-7.6 9.5-1.2 4-.8 8.4 1.1 12.1.4.9 1 1.7 1.6 2.7 1 1.7 2.2 3.5 3 5.7 1.4 4 1.2 8.7-.6 13.2-1.4 3.4-3.5 6.6-6.8 10.1-1.5 1.6-3.9 1.7-5.5.2-1.6-1.4-1.7-3.9-.2-5.4 2.6-2.8 4.3-5.3 5.3-7.7 1.1-2.8 1.3-5.6.5-7.9-.5-1.3-1.3-2.7-2.2-4.1-.6-1-1.3-2.1-1.9-3.2-2.8-5.4-3.4-11.9-1.7-17.8 1.8-5.9 5.8-11 11.2-14C739.4 421.6 739.9 421.4 740.4 421.4zM261.3 590.9c5.7 6.8 9 15.7 9.4 22.4.5 7.3-2.4 16.4-10.2 20.4-3 1.5-6.7 2.2-11.2 2.2-7.9-.1-12.9-2.9-15.4-8.4-2.1-4.7-2.3-11.4 1.8-15.9 3.2-3.5 7.8-4.1 11.2-1.6 1.2.9 1.5 2.7.6 3.9-.9 1.2-2.7 1.5-3.9.6-1.8-1.3-3.6.6-3.8.8-2.4 2.6-2.1 7-.8 9.9 1.5 3.4 4.7 5 10.4 5.1 3.6 0 6.4-.5 8.6-1.6 4.7-2.4 7.7-8.6 7.2-15-.5-7.3-5.3-18.2-13-23.9-4.2-3.1-8.5-4.1-12.9-3.1-3.1.7-6.2 2.4-9.7 5-6.6 5.1-11.7 11.8-14.2 19-2.7 7.7-2.1 15.8 1.9 23.9.7 1.4.1 3.1-1.3 3.7-1.4.7-3.1.1-3.7-1.3-4.6-9.4-5.4-19.2-2.2-28.2 2.9-8.2 8.6-15.9 16.1-21.6 4.1-3.1 8-5.1 11.8-6 6-1.4 12 0 17.5 4C257.6 586.9 259.6 588.8 261.3 590.9z'/%3E%3Ccircle cx='1013.7' cy='153.9' r='7.1'/%3E%3Ccircle cx='1024.3' cy='132.1' r='7.1'/%3E%3Ccircle cx='1037.3' cy='148.9' r='7.1'/%3E%3Cpath d='M1508.7 297.2c-4.8-5.4-9.7-10.8-14.8-16.2 5.6-5.6 11.1-11.5 15.6-18.2 1.2-1.7.7-4.1-1-5.2-1.7-1.2-4.1-.7-5.2 1-4.2 6.2-9.1 11.6-14.5 16.9-4.8-5-9.7-10-14.7-14.9-1.5-1.5-3.9-1.5-5.3 0-1.5 1.5-1.5 3.9 0 5.3 4.9 4.8 9.7 9.8 14.5 14.8-1.1 1.1-2.3 2.2-3.5 3.2-4.1 3.8-8.4 7.8-12.4 12-1.4 1.5-1.4 3.8 0 5.3 0 0 0 0 0 0 1.5 1.4 3.9 1.4 5.3-.1 3.9-4 8.1-7.9 12.1-11.7 1.2-1.1 2.3-2.2 3.5-3.3 4.9 5.3 9.8 10.6 14.6 15.9.1.1.1.1.2.2 1.4 1.4 3.7 1.5 5.2.2C1510 301.2 1510.1 298.8 1508.7 297.2zM327.6 248.6l-.4-2.6c-1.5-11.1-2.2-23.2-2.3-37 0-5.5 0-11.5.2-18.5 0-.7 0-1.5 0-2.3 0-5 0-11.2 3.9-13.5 2.2-1.3 5.1-1 8.5.9 5.7 3.1 13.2 8.7 17.5 14.9 5.5 7.8 7.3 16.9 5 25.7-3.2 12.3-15 31-30 32.1L327.6 248.6zM332.1 179.2c-.2 0-.3 0-.4.1-.1.1-.7.5-1.1 2.7-.3 1.9-.3 4.2-.3 6.3 0 .8 0 1.7 0 2.4-.2 6.9-.2 12.8-.2 18.3.1 12.5.7 23.5 2 33.7 11-2.7 20.4-18.1 23-27.8 1.9-7.2.4-14.8-4.2-21.3l0 0C347 188.1 340 183 335 180.3 333.6 179.5 332.6 179.2 332.1 179.2zM516.3 60.8c-.1 0-.2 0-.4-.1-2.4-.7-4-.9-6.7-.7-.7 0-1.3-.5-1.4-1.2 0-.7.5-1.3 1.2-1.4 3.1-.2 4.9 0 7.6.8.7.2 1.1.9.9 1.6C517.3 60.4 516.8 60.8 516.3 60.8zM506.1 70.5c-.5 0-1-.3-1.2-.8-.8-2.1-1.2-4.3-1.3-6.6 0-.7.5-1.3 1.2-1.3.7 0 1.3.5 1.3 1.2.1 2 .5 3.9 1.1 5.8.2.7-.1 1.4-.8 1.6C506.4 70.5 506.2 70.5 506.1 70.5zM494.1 64.4c-.4 0-.8-.2-1-.5-.4-.6-.3-1.4.2-1.8 1.8-1.4 3.7-2.6 5.8-3.6.6-.3 1.4 0 1.7.6.3.6 0 1.4-.6 1.7-1.9.9-3.7 2-5.3 3.3C494.7 64.3 494.4 64.4 494.1 64.4zM500.5 55.3c-.5 0-.9-.3-1.2-.7-.5-1-1.2-1.9-2.4-3.4-.3-.4-.7-.9-1.1-1.4-.4-.6-.3-1.4.2-1.8.6-.4 1.4-.3 1.8.2.4.5.8 1 1.1 1.4 1.3 1.6 2.1 2.6 2.7 3.9.3.6 0 1.4-.6 1.7C500.9 55.3 500.7 55.3 500.5 55.3zM506.7 55c-.3 0-.5-.1-.8-.2-.6-.4-.7-1.2-.3-1.8 1.2-1.7 2.3-3.4 3.3-5.2.3-.6 1.1-.9 1.7-.5.6.3.9 1.1.5 1.7-1 1.9-2.2 3.8-3.5 5.6C507.4 54.8 507.1 55 506.7 55zM1029.3 382.8c-.1 0-.2 0-.4-.1-2.4-.7-4-.9-6.7-.7-.7 0-1.3-.5-1.4-1.2 0-.7.5-1.3 1.2-1.4 3.1-.2 4.9 0 7.6.8.7.2 1.1.9.9 1.6C1030.3 382.4 1029.8 382.8 1029.3 382.8zM1019.1 392.5c-.5 0-1-.3-1.2-.8-.8-2.1-1.2-4.3-1.3-6.6 0-.7.5-1.3 1.2-1.3.7 0 1.3.5 1.3 1.2.1 2 .5 3.9 1.1 5.8.2.7-.1 1.4-.8 1.6C1019.4 392.5 1019.2 392.5 1019.1 392.5zM1007.1 386.4c-.4 0-.8-.2-1-.5-.4-.6-.3-1.4.2-1.8 1.8-1.4 3.7-2.6 5.8-3.6.6-.3 1.4 0 1.7.6.3.6 0 1.4-.6 1.7-1.9.9-3.7 2-5.3 3.3C1007.7 386.3 1007.4 386.4 1007.1 386.4zM1013.5 377.3c-.5 0-.9-.3-1.2-.7-.5-1-1.2-1.9-2.4-3.4-.3-.4-.7-.9-1.1-1.4-.4-.6-.3-1.4.2-1.8.6-.4 1.4-.3 1.8.2.4.5.8 1 1.1 1.4 1.3 1.6 2.1 2.6 2.7 3.9.3.6 0 1.4-.6 1.7C1013.9 377.3 1013.7 377.3 1013.5 377.3zM1019.7 377c-.3 0-.5-.1-.8-.2-.6-.4-.7-1.2-.3-1.8 1.2-1.7 2.3-3.4 3.3-5.2.3-.6 1.1-.9 1.7-.5.6.3.9 1.1.5 1.7-1 1.9-2.2 3.8-3.5 5.6C1020.4 376.8 1020.1 377 1019.7 377zM1329.7 573.4c-1.4 0-2.9-.2-4.5-.7-8.4-2.7-16.6-12.7-18.7-20-.4-1.4-.7-2.9-.9-4.4-8.1 3.3-15.5 10.6-15.4 21 0 1.5-1.2 2.7-2.7 2.8 0 0 0 0 0 0-1.5 0-2.7-1.2-2.7-2.7-.1-6.7 2.4-12.9 7-18 3.6-4 8.4-7.1 13.7-8.8.5-6.5 3.1-12.9 7.4-17.4 7-7.4 18.2-8.9 27.3-10.1l.7-.1c1.5-.2 2.9.9 3.1 2.3.2 1.5-.9 2.9-2.3 3.1l-.7.1c-8.6 1.2-18.4 2.5-24 8.4-3 3.2-5 7.7-5.7 12.4 7.9-1 17.7 1.3 24.3 5.7 4.3 2.9 7.1 7.8 7.2 12.7.2 4.3-1.7 8.3-5.2 11.1C1335.2 572.4 1332.6 573.4 1329.7 573.4zM1311 546.7c.1 1.5.4 3 .8 4.4 1.7 5.8 8.7 14.2 15.1 16.3 2.8.9 5.1.5 7.2-1.1 2.7-2.1 3.2-4.8 3.1-6.6-.1-3.2-2-6.4-4.8-8.3C1326.7 547.5 1317.7 545.6 1311 546.7z'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  font-family: var(--body-font);
+  color: var(--body-color);
+  font-weight: 400;
+  margin: 0;
+}
+
+.header, .browse, .browse-category, .profile, .profile-menu, .main-menu, .author, .year-book, .likes {
+  display: flex;
+  align-items: center;
+}
+
+.book-store {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  height: 100vh;
+  background-color: var(--page-bg-color);
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0px 2px 50px 10px rgba(0, 0, 0, 0.21);
+}
+
+.header {
+  height: 70px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--body-color-light);
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.search-bar {
+  position: relative;
+}
+.search-bar input {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  padding: 0 10px 0 40px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%238b939c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3e%3ccircle cx='11' cy='11' r='8'/%3e%3cpath d='M21 21l-4.35-4.35'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 15px 50%;
+  color: var(--body-color);
+  font-family: var(--body-font);
+}
+.search-bar input::placeholder {
+  color: var(--placeholder);
+}
+
+.browse-category {
+  border-right: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+.browse-category svg {
+  width: 16px;
+  margin: 2px 10px 0 8px;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 120px;
+}
+.header-title span {
+  font-weight: 500;
+  color: var(--body-color);
+}
+
+.user-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user-profile {
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.user-profile:before {
+  content: "";
+  position: absolute;
+  background-color: #f86d72;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 2px solid var(--theme-bg-color);
+  right: 12px;
+  top: -3px;
+  border: 2px solid #fff;
+}
+
+.profile {
+  flex-shrink: 0;
+}
+.profile-menu {
+  border-left: 1px solid var(--border-color);
+}
+.profile svg {
+  width: 16px;
+  margin: 0 8px 0 15px;
+  flex-shrink: 0;
+}
+
+.book-slide {
+  width: 100%;
+}
+
+.book {
+  background: #fff;
+}
+
+.book-cell {
+  position: relative;
+  display: flex;
+  padding: 25px;
+  width: 40%;
+  height: 250px;
+  margin-right: 1px;
+}
+.book-cell:nth-child(1) {
+  background-color: #fbadaf;
+}
+.book-cell:nth-child(2) {
+  background-color: #a4e0eb;
+}
+.book-cell:nth-child(3) {
+  background-color: #edb9d6;
+}
+.book-cell:nth-child(4) {
+  background-color: #fdca95;
+}
+.book-cell:nth-child(5) {
+  background-color: #cbb5e2;
+}
+
+.flickity-page-dots {
+  display: none;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #d6d6d6;
+  
+}
+
+.flickity-prev-next-button svg {
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+}
+
+.flickity-prev-next-button.previous {
+  left: 15px;
+}
+.flickity-prev-next-button.next {
+  right: 15px;
+}
+
+.flickity-viewport {
+  overflow: visible;
+}
+
+.book-photo {
+  width: 180px;
+  flex-shrink: 0;
+  bottom: -35px;
+  left: 35px;
+  border-radius: 2px;
+  box-shadow: -2px 6px 19px 0px #7f818e;
+  transition: .3s ease;
+}
+.book-photo:hover {
+  transform: scale(1.03);
+}
+
+.book-img {
+  flex-shrink: 0;
+}
+
+.book-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.book-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.book-author {
+  margin-top: 3px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.book-content {
+  padding: 0 20px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+fieldset,
+label {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 0.5em;
+  margin: 10px;
+}
+
+.rating {
+  border: none;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label:before {
+  margin-right: 5px;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > label {
+  color: #fff;
+  float: right;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #d85d61;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: #d85d61;
+}
+
+.blue > input:checked ~ label,
+.blue:not(:checked) > label:hover,
+.blue:not(:checked) > label:hover ~ label {
+  color: #458997;
+}
+
+.blue > input:checked + label:hover,
+.blue > input:checked ~ label:hover,
+.blue > label:hover ~ input:checked ~ label,
+.blue > input:checked ~ label:hover ~ label {
+  color: #458997;
+}
+
+.purple > input:checked ~ label,
+.purple:not(:checked) > label:hover,
+.purple:not(:checked) > label:hover ~ label {
+  color: #a76287;
+}
+
+.purple > input:checked + label:hover,
+.purple > input:checked ~ label:hover,
+.purple > label:hover ~ input:checked ~ label,
+.purple > input:checked ~ label:hover ~ label {
+  color: #a76287;
+}
+
+.yellow > input:checked ~ label,
+.yellow:not(:checked) > label:hover,
+.yellow:not(:checked) > label:hover ~ label {
+  color: #ffad58;
+}
+
+.yellow > input:checked + label:hover,
+.yellow > input:checked ~ label:hover,
+.yellow > label:hover ~ input:checked ~ label,
+.yellow > input:checked ~ label:hover ~ label {
+  color: #ffad58;
+}
+
+.dark-purp > input:checked ~ label,
+.dark-purp:not(:checked) > label:hover,
+.dark-purp:not(:checked) > label:hover ~ label {
+  color: #905587;
+}
+
+.dark-purp > input:checked + label:hover,
+.dark-purp > input:checked ~ label:hover,
+.dark-purp > label:hover ~ input:checked ~ label,
+.dark-purp > input:checked ~ label:hover ~ label {
+  color: #905587;
+}
+
+.book-voters {
+  color: #fff;
+  vertical-align: sub;
+  font-size: 13px;
+  margin-left: 7px;
+  white-space: nowrap;
+  margin-top: 7px;
+}
+
+
+.content-front:nth-child(2):after {
+    content: '';
+}
+
+
+.bg-header {
+  background-color: rgba(255, 255, 255, 0.56);
+  padding: 12px 20px;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+a:hover{
+  text-decoration:none;
+  color:#05C2DE;
+  
+  transition:1s;
+}
+
+.welcome-board-name
+{
+  font-family: 'Vast Shadow', cursive;
+    color: #01171e;
+    font-size: 1.3em;
+    
+}
+
+.content-inner {
+  width: 100%;
+  color: #fff;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+  transition: 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.fl-wrap {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.content-inner .content-front,
+.content-inner .content-back {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-front {
+  background: #292929;
+  position: relative;
+}
+
+.content-inner > * {
+  backface-visibility: hidden;
+  transition: 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cf-inner:before,
+.cf-inner:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-color: rgba(255, 255, 255, 0.4);
+  z-index: 10;
+}
+
+.cf-inner:before {
+  top: 20px;
+  left: 20px;
+  border-left: 1px solid;
+  border-top: 1px solid;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: repeat;
+  background-origin: content-box;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  z-index: 3;
+}
+
+.content-inner .cf-inner .inner {
+  align-items: stretch;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+  transform: translateZ(95px) scale(0.81);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cf-inner:after {
+  bottom: 20px;
+  right: 20px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.content-inner .cf-inner .inner h2 {
+  position: relative;
+  font-size: 22px;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+
+.content-inner .cf-inner .inner h2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 20px;
+  height: 2px;
+  margin-left: -10px;
+}
+
+.content-inner .content-front li {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin: 0 4px;
+}
+.cf-inner:after {
+  bottom: 20px;
+  right: 20px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.content-inner .content-front,
+.content-inner .content-back {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-inner .cf-inner .inner {
+  align-items: stretch;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+  transform: translateZ(95px) scale(0.81);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.content-inner:hover .content-front {
+  transform: rotateY(-180deg);
+}
+
+.content-inner:hover .content-back {
+  transform: rotateY(0deg);
+}
+
+.content-inner .content-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transform: rotateY(180deg);
+  background: #292929;
+  background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80");
+}
+
+.content-inner .cf-inner {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  width: 100%;
+  padding: 150px 20px;
+}
+
+.serv-price-wrap {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 30px;
+  margin-top: 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.content-inner .cf-inner .inner h2:before {
+  background: #00bcd4;
+}
+
+inner:before,
+.cf-inner:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-color: rgba(255, 255, 255, 0.4);
+  z-index: 10;
+}
+
+.cf-inner:before,
+.cf-inner:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 250px;
+  border-color: rgba(0, 188, 212, 0.33);
+  z-index: 10;
+}
+
+.dec-icon {
+  padding-bottom: 40px;
+}
+
+.content-back .cf-inner:before {
+  top: 125px;
+}
+
+.content-back .cf-inner:after {
+  bottom: 125px;
+}
+
+
+
+
+/* custom-cursor */
+/* =============================================================================================== */
+.custom-cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid hsla(0, 0%, 100%, .7);
+  border-radius: 100%;
+
+  background: hsla(0, 0%, 80%, .2);
+  position: absolute;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+
+/* buttons */
+/* =============================================================================================== */
+/* btn-circle */
+/* ---------------------------------------- */
+.btn-circle {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* btn-pTSecond */
+/* ---------------------------------------- */
+.btn-pTSecond {
+  margin-top: 2rem;
+  border: 1px solid red;
+
+  transform: scale(.8);
+  transform-origin: left center;
+  transition: .3s;
+}
+
+.btn-pTSecond:hover,
+.btn-pTSecond:focus {
+  transform: scale(1);
+}
+
+.btn-pTSecond::before {
+  content: '';
+
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+
+  position: absolute;
+  background: var(--gradient-2);
+
+  transform: scale(0);
+  transition: .6s;
+}
+
+
+
+
+
+
+.book-sum {
+  margin-top: 20px;
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.book-see {
+  margin-top: 25px;
+  text-align: center;
+  background-color: #fff;
+  color: #fbadaf;
+  font-weight: 600;
+  padding: 8px;
+  font-size: 14px;
+  width: 160px;
+  border-radius: 20px;
+}
+.book-see:hover {
+  color: #ff6e72;
+}
+.book-see.book-blue {
+  color: #a4e0eb;
+}
+.book-see.book-blue:hover {
+  color: #22cdec;
+}
+.book-see.book-pink {
+  color: #edb9d6;
+}
+.book-see.book-pink:hover {
+  color: #ff6dbe;
+}
+.book-see.book-yellow {
+  color: #fdca95;
+}
+.book-see.book-yellow:hover {
+  color: #fb9124;
+}
+.book-see.book-purple {
+  color: #cbb5e2;
+}
+.book-see.book-purple:hover {
+  color: #a764ec;
+}
+
+.main-wrapper {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.books-of {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+}
+
+.popular-books {
+  flex-grow: 1;
+  padding: 0 30px 50px;
+  overflow-y: auto;
+}
+
+.genre {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.main-menu {
+  white-space: nowrap;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dcddde;
+  position: sticky;
+  top: 0;
+  right: 0;
+  background-color: var(--page-bg-color);
+  z-index: 2;
+}
+
+.book-types {
+  margin-left: auto;
+}
+.book-types a {
+  text-decoration: none;
+  color: var(--body-color);
+  font-size: 14px;
+}
+
+.book-type + .book-type {
+  margin-left: 20px;
+}
+
+.book-type {
+  position: relative;
+  transition: 0.2s;
+}
+.book-type.active, .book-type:hover {
+  -webkit-text-stroke: .3px;
+}
+.book-type.active:before, .book-type:hover:before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  bottom: -17px;
+  right: 15px;
+  background-color: #67d4ea;
+  box-shadow: 0px -1px 5px 0px #67d4ea;
+}
+.book-type:nth-child(2):before {
+  right: 12px;
+}
+.book-type:nth-child(3):before {
+  right: 8px;
+}
+.book-type:nth-child(4):before {
+  right: 6px;
+}
+.book-type:nth-child(5):before {
+  right: 20px;
+}
+
+.week {
+  padding: 0 30px;
+}
+
+.author + .author {
+  margin-top: 20px;
+}
+.author-name {
+  font-size: 14px;
+}
+.author:last-child {
+  margin-bottom: 40px;
+}
+
+.author-title {
+  padding: 0 0 20px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.author-img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 16px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.year-book-img {
+  width: 45px;
+  margin-right: 16px;
+}
+.year-book-name {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.year-book-author {
+  font-size: 13px;
+}
+.year-book + .year-book {
+  margin-top: 20px;
+}
+
+.year-book-content {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.overlay {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 340px;
+  flex-shrink: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f2f5f7 65%, #f2f5f7 100%);
+  height: 60px;
+  margin-left: -35px;
+}
+
+.book-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  padding-top: 40px;
+  position: relative;
+}
+
+.book-card {
+  margin-top: 20px;
+  background-color: #fff;
+  height: 270px;
+  box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0 0 20px 20px;
+  color: var(--body-color-light);
+}
+
+.book-card-img {
+  width: 160px;
+  margin-top: -35px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 7px 2px #c7c9d3;
+  border-bottom: 1px solid #dcddde;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: .3s ease;
+}
+.book-card-img:hover {
+  transform: scale(1.04);
+}
+
+.card-content {
+  color: var(--body-color);
+  padding: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.book-name {
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.book-by {
+  font-size: 13px;
+  color: var(--body-color-light);
+  margin-top: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.book-rate > label {
+  color: #cccccc;
+}
+
+.rate {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.book-rate > input:checked ~ label,
+.book-rate:not(:checked) > label:hover,
+.book-rate:not(:checked) > label:hover ~ label {
+  color: #ff9700;
+}
+
+.book-rate > input:checked + label:hover,
+.book-rate > input:checked ~ label:hover,
+.book-rate > label:hover ~ input:checked ~ label,
+.book-rate > input:checked ~ label:hover ~ label {
+  color: #ff9700;
+}
+
+.card-vote {
+  color: var(--body-color-light);
+}
+
+.card-sum {
+  color: var(--body-color-light);
+  font-size: 13px;
+  line-height: 1.6em;
+  -webkit-line-clamp: 4;
+  margin-top: 15px;
+}
+
+.content-wrapper {
+  display: flex;
+  border-bottom: 1px solid #ebedef;
+  position: relative;
+}
+.content-wrapper:before {
+  content: "";
+  position: absolute;
+  background-color: #8f98a9;
+  background-color: #aaaebc;
+  box-shadow: 0 -6px 0 0 #aaaebc, 0 6px 0 0 #aaaebc;
+  width: 4px;
+  height: 4px;
+  border: 0;
+  padding: 0;
+  right: 12px;
+  top: 17px;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.like-profile {
+  margin-top: 8px;
+}
+.like-profile + .like-profile {
+  margin-left: -5px;
+}
+
+.like-img {
+  border-radius: 50%;
+  width: 28px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.like-name {
+  font-size: 13px;
+  margin-left: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.like-name span {
+  font-weight: 600;
+}
+
+@media (max-width: 1103px) {
+  .book-cell {
+    width: 60%;
+  }
+}
+@media (max-width: 765px) {
+  .book-cell {
+    width: 80%;
+  }
+}
+@media (max-width: 575px) {
+  .book-cell {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .book-cell {
+    width: 100%;
+  }
+}
+@media (max-width: 458px) {
+  .book-photo {
+    width: 180px;
+  }
+
+  .book-voters {
+    display: none;
+  }
+}
+@media (max-width: 420px) {
+  .book-see {
+    width: 120px;
+    font-size: 13px;
+  }
+
+  .book-photo {
+    width: 130px;
+  }
+
+  .main-wrapper {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 360px) {
+  .rating > label:before {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 1220px) {
+  .card-vote {
+    display: none;
+  }
+}
+@media (max-width: 1085px) {
+  .book-rate > label {
+    font-size: .7em;
+  }
+}
+@media (max-width: 1045px) {
+  .books-of {
+    display: none;
+  }
+}
+@media (max-width: 725px) {
+  .browse-category, .search-bar {
+    display: none;
+  }
+
+  .header-title {
+    margin-right: auto;
+  }
+
+  .book-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .book-types {
+    display: none;
+  }
+}
+@media (max-width: 372px) {
+  .card-content {
+    padding: 20px;
+  }
+}
+
+
+body,
+#slider,
+.wrap,
+.slide-content {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.wrap {
+  position: relative;
+}
+
+.slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide1 {
+  background-image: url("https://central.landmarkgroup.com/sites/default/files/product_images/home%20centre/157223029/157223029-157223029-HCB99DEC15_01-1200_3.jpg");
+}
+.slide2 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0015/5094/2267/products/57_36c74f80-7856-44ac-a574-9971ed13629a.jpg?v=1584524903");
+}
+.slide3 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0015/5094/2267/products/Pure-White-Sateen-Duvet-Set_95aeb606-39fa-4744-b104-468d97065f89.jpg?v=1591705544");
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide-content span {
+  font-size: 5rem;
+  color: red;
+  text-shadow: 2px 2px red;
+  animation: pulse 10s infinite;
+  padding: 5px;
+}
+@keyframes pulse {
+  0% {
+    color: #001F3F;
+    text-shadow: 2px 2px red;
+    opacity: 0.9;
+  }
+  25% {
+    color: #056F3F;
+    text-shadow: 2px 2px black;
+    opacity: 0.9;
+  }
+  50% {
+    color: #461f05;
+    opacity: 0.9;
+    text-shadow: 2px 2px black;
+  }
+  75% {
+    color: white;
+    text-shadow: 2px 2px magenta;
+    opacity: 0.9;
+  }
+  100% {
+    color: red !important;
+    text-shadow: 2px 2px greenyellow;
+    opacity:0.9;
+  }
+}
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+#arrow-left {
+  border-width: 30px 40px 30px 0;
+  border-color: transparent #333 transparent transparent;
+  left: 0;
+  margin-left: 30px;
+}
+
+#arrow-right {
+  border-width: 30px 0 30px 40px;
+  border-color: transparent transparent transparent #333;
+  right: 0;
+  margin-right: 30px;
+}
+    </style>
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Egypt Fabrics</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrap">
+  <div id="arrow-left" class="arrow"></div>
+  <div id="slider">
+    <div class="slide slide1">
+      <div class="slide-content">
+        <span>Bed sheet</span>
+      </div>
+    </div>
+    <div class="slide slide2">
+      <div class="slide-content">
+        <span>Bed sheet</span>
+      </div>
+    </div>
+    <div class="slide slide3">
+      <div class="slide-content">
+        <span>Bed sheet</span>
+      </div>
+    </div>
+  </div>
+  <div id="arrow-right" class="arrow"></div>
+</div>
+<!-- partial -->
+  <script>
+
+let sliderImages = document.querySelectorAll(".slide"),
+  arrowLeft = document.querySelector("#arrow-left"),
+  arrowRight = document.querySelector("#arrow-right"),
+  current = 0;
+
+// Clear all images
+function reset() {
+  for (let i = 0; i < sliderImages.length; i++) {
+    sliderImages[i].style.display = "none";
+  }
+}
+
+// Init slider
+function startSlide() {
+  reset();
+  sliderImages[0].style.display = "block";
+}
+
+// Show prev
+function slideLeft() {
+  reset();
+  sliderImages[current - 1].style.display = "block";
+  current--;
+}
+
+// Show next
+function slideRight() {
+  reset();
+  sliderImages[current + 1].style.display = "block";
+  current++;
+}
+
+// Left arrow click
+arrowLeft.addEventListener("click", function() {
+  if (current === 0) {
+    current = sliderImages.length;
+  }
+  slideLeft();
+});
+
+// Right arrow click
+arrowRight.addEventListener("click", function() {
+  if (current === sliderImages.length - 1) {
+    current = -1;
+  }
+  slideRight();
+});
+
+startSlide();
+
+
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+ <div class="book-slide">
+  <div class="book js-flickity" data-flickity-options='{ "wrapAround": true }'>
+   <div class="book-cell">
+    <div class="book-img">
+     <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/Duvet_754089cc-fc0d-4ab8-9398-18a920aadb7e.progressive.jpg?v=1591705752" alt="" class="book-photo">
+    </div>
+    <div class="book-content">
+     <div class="book-title">Bed Sheet</div>
+     <div class="book-author">by Brand </div>
+     <div class="rate">
+      <fieldset class="rating">
+       <input type="checkbox" id="star5" name="rating" value="5" />
+       <label class="full" for="star5"></label>
+       <input type="checkbox" id="star4" name="rating" value="4" />
+       <label class="full" for="star4"></label>
+       <input type="checkbox" id="star3" name="rating" value="3" />
+       <label class="full" for="star3"></label>
+       <input type="checkbox" id="star2" name="rating" value="2" />
+       <label class="full" for="star2"></label>
+       <input type="checkbox" id="star1" name="rating" value="1" />
+       <label class="full" for="star1"></label>
+      </fieldset>
+      <span class="book-voters">1.987 voters</span>
+     </div>
+     <div class="book-sum">Customers of all ages and walks of life have ............... </div>
+     <div class="book-see">Buy Now</div>
+    </div>
+   </div>
+   <div class="book-cell">
+    <div class="book-img">
+     <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/Duvet_754089cc-fc0d-4ab8-9398-18a920aadb7e.progressive.jpg?v=1591705752" alt="" class="book-photo">
+    </div>
+    <div class="book-content">
+        <div class="book-title">Bed Sheet</div>
+        <div class="book-author">by Brand </div>
+     <div class="rate">
+      <fieldset class="rating blue">
+       <input type="checkbox" id="star6" name="rating" value="5" />
+       <label class="full1" for="star6"></label>
+       <input type="checkbox" id="star7" name="rating" value="4" />
+       <label class="full1" for="star7"></label>
+       <input type="checkbox" id="star8" name="rating" value="3" />
+       <label class="full1" for="star8"></label>
+       <input type="checkbox" id="star9" name="rating" value="2" />
+       <label class="full1" for="star9"></label>
+       <input type="checkbox" id="star10" name="rating" value="1" />
+       <label class="full1" for="star10"></label>
+      </fieldset>
+      <span class="book-voters">1.987 voters</span>
+     </div>
+     <div class="book-sum">Customers of all ages and walks of life have ...............</div>
+     <div class="book-see book-blue">Buy Now</div>
+    </div>
+   </div>
+   <div class="book-cell">
+    <div class="book-img">
+     <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/Duvet_754089cc-fc0d-4ab8-9398-18a920aadb7e.progressive.jpg?v=1591705752" alt="" class="book-photo">
+    </div>
+    <div class="book-content">
+        <div class="book-title">Bed Sheet</div>
+        <div class="book-author">by Brand </div>
+     <div class="rate">
+      <fieldset class="rating blue">
+       <input type="checkbox" id="star6" name="rating" value="5" />
+       <label class="full1" for="star6"></label>
+       <input type="checkbox" id="star7" name="rating" value="4" />
+       <label class="full1" for="star7"></label>
+       <input type="checkbox" id="star8" name="rating" value="3" />
+       <label class="full1" for="star8"></label>
+       <input type="checkbox" id="star9" name="rating" value="2" />
+       <label class="full1" for="star9"></label>
+       <input type="checkbox" id="star10" name="rating" value="1" />
+       <label class="full1" for="star10"></label>
+      </fieldset>
+      <span class="book-voters">1.987 voters</span>
+     </div>
+     <div class="book-sum">Customers of all ages and walks of life have ...............</div>
+     <div class="book-see book-blue">Buy Now</div>
+    </div>
+   </div>
+   <div class="book-cell">
+    <div class="book-img">
+     <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/Duvet_754089cc-fc0d-4ab8-9398-18a920aadb7e.progressive.jpg?v=1591705752" alt="" class="book-photo">
+    </div>
+    <div class="book-content">
+        <div class="book-title">Bed Sheet</div>
+        <div class="book-author">by Brand </div>
+     <div class="rate">
+      <fieldset class="rating blue">
+       <input type="checkbox" id="star6" name="rating" value="5" />
+       <label class="full1" for="star6"></label>
+       <input type="checkbox" id="star7" name="rating" value="4" />
+       <label class="full1" for="star7"></label>
+       <input type="checkbox" id="star8" name="rating" value="3" />
+       <label class="full1" for="star8"></label>
+       <input type="checkbox" id="star9" name="rating" value="2" />
+       <label class="full1" for="star9"></label>
+       <input type="checkbox" id="star10" name="rating" value="1" />
+       <label class="full1" for="star10"></label>
+      </fieldset>
+      <span class="book-voters">1.987 voters</span>
+     </div>
+     <div class="book-sum">Customers of all ages and walks of life have ...............</div>
+     <div class="book-see book-blue">Buy Now</div>
+    </div>
+   </div>
+   <div class="book-cell">
+    <div class="book-img">
+     <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/Duvet_754089cc-fc0d-4ab8-9398-18a920aadb7e.progressive.jpg?v=1591705752" alt="" class="book-photo">
+    </div>
+    <div class="book-content">
+        <div class="book-title">Bed Sheet</div>
+        <div class="book-author">by Brand </div>
+     <div class="rate">
+      <fieldset class="rating blue">
+       <input type="checkbox" id="star6" name="rating" value="5" />
+       <label class="full1" for="star6"></label>
+       <input type="checkbox" id="star7" name="rating" value="4" />
+       <label class="full1" for="star7"></label>
+       <input type="checkbox" id="star8" name="rating" value="3" />
+       <label class="full1" for="star8"></label>
+       <input type="checkbox" id="star9" name="rating" value="2" />
+       <label class="full1" for="star9"></label>
+       <input type="checkbox" id="star10" name="rating" value="1" />
+       <label class="full1" for="star10"></label>
+      </fieldset>
+      <span class="book-voters">1.987 voters</span>
+     </div>
+     <div class="book-sum">Customers of all ages and walks of life have ...............</div>
+     <div class="book-see book-blue">Buy Now</div>
+    </div>
+   </div>
+  </div>
+ </div>
+ 
+
+<style>
+
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1),
+    -30px 0px 40px rgba(0, 0, 0, 0.1);
+}
+
+#landing {
+  background: #fff;
+}
+
+#landing-text {
+  display: flex;
+  flex: 0 1 40vw;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+#landing-text h2 {
+  color: #888;
+}
+
+#landing-image {
+  background: url(https://fabricsandrugsonlinestore.files.wordpress.com/2015/05/contemporary-look-with-classic-sheer-fabrics-custom-drapery.jpg?w=700&h=653);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  flex: 0 1 60vw;
+  margin: 0;
+}
+
+.btn {
+  padding: 0.5rem 2rem;
+  border: 1px #ccc solid;
+  display: inline-block;
+  margin: 2rem 0 0;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #333;
+  transition: background 500ms ease;
+}
+
+.btn:hover {
+  background: #f4f4f4;
+}
+
+#header {
+  padding: 1.5rem;
+  text-align: center;
+  background: #333;
+  color: #fff;
+}
+
+#header h2 {
+  border-left: dotted 1px #fff;
+  border-right: dotted 1px #fff;
+  display: inline-block;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.caption {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: auto;
+  color: #333;
+}
+
+footer h3 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+/* Screen Sizes 500px and Up */
+@media (min-width: 500px) {
+  #landing {
+    display: flex;
+    height: 100%;
+  }
+
+  #landing-text {
+    height: 100vh;
+  }
+
+  #landing-image {
+    height: 100vh;
+  }
+}
+
+/* Screen Sizes 700px and Up */
+@media (min-width: 700px) {
+  .btn {
+    padding: 1rem 3rem;
+  }
+}
+</style>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<main>
+  <!-- Landing Area -->
+  <div id="landing">
+    <div id="landing-text">
+      <div id="landing-text-inner">
+        <h1>Egypt Fabrics</h1>
+        <h2>Lorem, ipsum dolor.</h2>
+        <a href="#images" class="btn" id="view-work">
+          View Work
+        </a>
+      </div>
+    </div>
+    <div id="landing-image"></div>
+  </div>
+<br>
+<br>
+<br>
+
+  <div id="images">
+    <div id="header">
+      <h2>Our Work</h2>
+    </div>
+
+    <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/sateennavybluesettt_1f318179-56c1-4ac3-94b7-2e0c5c9650f2.jpg?v=1591705544" alt="">
+    <div class="caption">
+      <h3>title One</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tenetur.</p>
+    </div>
+    <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/sateennavybluesettt_1f318179-56c1-4ac3-94b7-2e0c5c9650f2.jpg?v=1591705544" alt="">
+    <div class="caption">
+      <h3>title Two</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tenetur.</p>
+    </div>
+    <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/sateennavybluesettt_1f318179-56c1-4ac3-94b7-2e0c5c9650f2.jpg?v=1591705544" alt="">
+    <div class="caption">
+      <h3>title Three</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tenetur.</p>
+    </div>
+    <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/sateennavybluesettt_1f318179-56c1-4ac3-94b7-2e0c5c9650f2.jpg?v=1591705544" alt="">
+    <div class="caption">
+      <h3>title Four</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tenetur.</p>
+    </div>
+    <img src="https://cdn.shopify.com/s/files/1/0015/5094/2267/products/sateennavybluesettt_1f318179-56c1-4ac3-94b7-2e0c5c9650f2.jpg?v=1591705544" alt="">
+    <div class="caption">
+      <h3>title Five</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tenetur.</p>
+    </div>
+  </div>
+</main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<style>
+  /*!
+ * Start Bootstrap - Agency Bootstrap Theme (https://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+.text-muted {
+    color: #777;
+}
+
+.text-primary {
+    color: #1ee2e7;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+a {
+    color: #1ee2e7;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: #17d0d5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-light-gray {
+    background-color: #f7f7f7;
+}
+
+.bg-darkest-gray {
+    background-color: #222;
+}
+
+.btn-primary {
+    border-color: #1ee2e7;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    border-color: #17d0d5;
+    color: #fff;
+    background-color: #17d0d5;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    border-color: #1ee2e7;
+    background-color: #1ee2e7;
+}
+
+.btn-primary .badge {
+    color: #1ee2e7;
+    background-color: #fff;
+}
+
+.btn-xl {
+    padding: 20px 40px;
+    border-color: #1ee2e7;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.btn-xl:hover,
+.btn-xl:focus,
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+    border-color: #17d0d5;
+    color: #fff;
+    background-color: #17d0d5;
+}
+
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+    background-image: none;
+}
+
+.btn-xl.disabled,
+.btn-xl[disabled],
+fieldset[disabled] .btn-xl,
+.btn-xl.disabled:hover,
+.btn-xl[disabled]:hover,
+fieldset[disabled] .btn-xl:hover,
+.btn-xl.disabled:focus,
+.btn-xl[disabled]:focus,
+fieldset[disabled] .btn-xl:focus,
+.btn-xl.disabled:active,
+.btn-xl[disabled]:active,
+fieldset[disabled] .btn-xl:active,
+.btn-xl.disabled.active,
+.btn-xl[disabled].active,
+fieldset[disabled] .btn-xl.active {
+    border-color: #1ee2e7;
+    background-color: #1ee2e7;
+}
+
+.btn-xl .badge {
+    color: #fed136;
+    background-color: #fff;
+}
+
+.navbar-default {
+    border-color: transparent;
+    background-color: #222;
+}
+
+.navbar-default .navbar-brand {
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    color: #1ee2e7;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand.active {
+    color: #fec503;
+}
+
+.navbar-default .navbar-collapse {
+    border-color: rgba(255,255,255,.02);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #1ee2e7;
+    background-color: #1ee2e7;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #1ee2e7;
+}
+
+.navbar-default .nav li a {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+    outline: 0;
+    color: #1ee2e7;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #17d0d5;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        padding: 25px 0;
+        border: 0;
+        background-color: transparent;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-default .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-default .navbar-nav>.active>a {
+        border-radius: 3px;
+    }
+
+    .navbar-default.navbar-shrink {
+        padding: 10px 0;
+        background-color: #222;
+    }
+
+    .navbar-default.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
+header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(https://unsplash.imgix.net/uploads%2F14115408840644deb16b0%2F2dc933e3?q=75&fm=jpg&auto=format&s=7f43646e4d26049c6c39890afb2e5ced);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+header .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
+header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+
+    header .intro-text .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+    header .intro-text .intro-heading {
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+}
+
+section {
+    padding: 100px 0;
+}
+
+section h2.section-heading {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+section h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 150px 0;
+    }
+}
+
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+}
+
+#portfolio .portfolio-item {
+    right: 0;
+    margin: 0 0 15px;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: #1ee2e7;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+    opacity: 1;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -12px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+    margin-top: -12px;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+    margin: 0;
+}
+
+#portfolio .portfolio-item .portfolio-caption {
+    margin: 0 auto;
+    padding: 25px;
+    max-width: 400px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-caption h4 {
+    margin: 0;
+    text-transform: none;
+}
+
+#portfolio .portfolio-item .portfolio-caption p {
+    margin: 0;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+#portfolio * {
+    z-index: 2;
+}
+
+@media(min-width:767px) {
+    #portfolio .portfolio-item {
+        margin: 0 0 30px;
+    }
+}
+
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    margin-left: -1.5px;
+    background-color: #f1f1f1;
+}
+
+.timeline>li {
+    position: relative;
+    margin-bottom: 50px;
+    min-height: 50px;
+}
+
+.timeline>li:before,
+.timeline>li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline>li:after {
+    clear: both;
+}
+
+.timeline>li .timeline-panel {
+    float: right;
+    position: relative;
+    width: 100%;
+    padding: 0 20px 0 100px;
+    text-align: left;
+}
+
+.timeline>li .timeline-panel:before {
+    right: auto;
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline>li .timeline-panel:after {
+    right: auto;
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.timeline>li .timeline-image {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    border: 7px solid #f1f1f1;
+    border-radius: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.timeline>li .timeline-image h4 {
+    margin-top: 12px;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel {
+    float: right;
+    padding: 0 20px 0 100px;
+    text-align: left;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:before {
+    right: auto;
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:after {
+    right: auto;
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.timeline>li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline .timeline-heading h4 {
+    margin-top: 0;
+    color: inherit;
+}
+
+.timeline .timeline-heading h4.subheading {
+    text-transform: none;
+}
+
+.timeline .timeline-body>p,
+.timeline .timeline-body>ul {
+    margin-bottom: 0;
+}
+
+@media(min-width:768px) {
+    .timeline:before {
+        left: 50%;
+    }
+
+    .timeline>li {
+        margin-bottom: 100px;
+        min-height: 100px;
+    }
+
+    .timeline>li .timeline-panel {
+        float: left;
+        width: 41%;
+        padding: 0 20px 20px 30px;
+        text-align: right;
+    }
+
+    .timeline>li .timeline-image {
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+    }
+
+    .timeline>li .timeline-image h4 {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        float: right;
+        padding: 0 30px 20px 20px;
+        text-align: left;
+    }
+}
+
+@media(min-width:992px) {
+    .timeline>li {
+        min-height: 150px;
+    }
+
+    .timeline>li .timeline-panel {
+        padding: 0 20px 20px;
+    }
+
+    .timeline>li .timeline-image {
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+    }
+
+    .timeline>li .timeline-image h4 {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        padding: 0 20px 20px;
+    }
+}
+
+@media(min-width:1200px) {
+    .timeline>li {
+        min-height: 170px;
+    }
+
+    .timeline>li .timeline-panel {
+        padding: 0 20px 20px 100px;
+    }
+
+    .timeline>li .timeline-image {
+        width: 170px;
+        height: 170px;
+        margin-left: -85px;
+    }
+
+    .timeline>li .timeline-image h4 {
+        margin-top: 40px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        padding: 0 100px 20px 20px;
+    }
+}
+
+.team-member {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.team-member img {
+    margin: 0 auto;
+    border: 7px solid #fff;
+}
+
+.team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+.team-member p {
+    margin-top: 0;
+}
+
+
+section#contact {
+    background-color: #222;
+    background-image: url(https://unsplash.imgix.net/44/C3EWdWzT8imxs0fKeKoC_blackforrest.JPG?q=75&fm=jpg&auto=format&s=986aaa92169d4e97975fa66ebd60bafd);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section#contact .section-heading {
+    color: #fff;
+}
+
+section#contact .form-group {
+    margin-bottom: 25px;
+}
+
+section#contact .form-group input,
+section#contact .form-group textarea {
+    padding: 20px;
+}
+
+section#contact .form-group input.form-control {
+    height: auto;
+}
+
+section#contact .form-group textarea.form-control {
+    height: 236px;
+}
+
+section#contact .form-control:focus {
+    border-color: #1ee2e7;
+    box-shadow: none;
+}
+
+section#contact::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact::-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact .text-danger {
+    color: #e74c3c;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer span.copyright {
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+footer ul.quicklinks {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: #1ee2e7;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+    outline: 0;
+}
+
+.portfolio-modal .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.portfolio-modal .modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 3em;
+}
+
+.portfolio-modal .modal-content p {
+    margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content p.item-intro {
+    margin: 20px 0 30px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.portfolio-modal .modal-content ul.list-inline {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content img {
+    margin-bottom: 30px;
+}
+
+.portfolio-modal .close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.portfolio-modal .close-modal:hover {
+    opacity: .3;
+}
+
+.portfolio-modal .close-modal .lr {
+    z-index: 1051;
+    width: 1px;
+    height: 75px;
+    margin-left: 35px;
+    background-color: #222;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.portfolio-modal .close-modal .lr .rl {
+    z-index: 1052;
+    width: 1px;
+    height: 75px;
+    background-color: #222;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #1ee2e7;
+}
+
+::selection {
+    text-shadow: none;
+    background: #1ee2e7;
+}
+
+img::selection {
+    background: 0 0;
+}
+
+img::-moz-selection {
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: #1ee2e7;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container-2 {
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 1140px;
+}
+
+h1 {
+  position: relative;
+  margin-bottom: 45px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+}
+.item:hover {
+  flex: 7;
+}
+
+.item-1 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0015/5094/2267/t/5/assets/pf-6dbb03af--Sateen.jpg?v=1584303103");
+}
+
+.item-2 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0015/5094/2267/products/sateennavybluesettt_1f318179-56c1-4ac3-94b7-2e0c5c9650f2.jpg?v=1591705544");
+}
+
+.item-3 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0015/5094/2267/products/Pink-duvet_6ac54346-d4d7-4cf7-b9f0-5e1827069623.jpg?v=1591705613");
+}
+
+.item-4 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0015/5094/2267/products/jacquard1_58c8a03d-a25d-4a04-8c01-fa3bb45fb3b2.jpg?v=1591705760");
+}
+
+.item-5 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0015/5094/2267/products/duvetbluee_36671ff2-10d7-48ce-96b7-a031606d34b1.jpg?v=1591705766");
+}
+
+.social {
+  position: absolute;
+  right: 35px;
+  bottom: 300 !important;
+  
+}
+
+.social2 {
+  position: absolute;
+  right: 35px;
+  bottom: 350 !important;
+  
+}
+.social img {
+  display: block;
+  width: 32px;
+}
+.social2 img {
+  display: block;
+  width: 32px;
+}
+#borderchoice:hover{
+  border: 2px solid red !important;
+  color: red !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-size:80px !important;
+
+}
+</style>
+
+<div class="caption">
+  <h1 id="borderchoice" style="color: black;font-family: 'Poiret One', cursive;border: 2px solid black; padding-top:5px; padding-bottom: 5px ;">Hot picks</h1>
+</div>
+
+<div class="container-2">
+  
+  
+
+  <div class="gallery-wrap">
+    <div class="item item-1"></div>
+    <div class="item item-2"></div>
+    <div class="item item-3"></div>
+    <div class="item item-4"></div>
+    <div class="item item-5"></div>
+  </div>
+ </div>
+
+<div class="social">
+  <a href="#" >
+    <img style="color: skyblue !important;" src="https://seeklogo.com/images/T/twitter-logo-A84FE9258E-seeklogo.com.png" alt="">
+  </a>
+</div>
+<div class="social2">
+  <a href="https://www.facebook.com/purecottonfabrics/" target="_blank" >
+    <img style="color: skyblue !important;" src="https://seeklogo.com/images/F/facebook-logo-966BBFBC34-seeklogo.com.png
+    " alt="">
+  </a>
+</div>
+<!-- partial -->
+</body>
+</html>
+
+
+
+
+
+
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Our journey </h2>
+              <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nobis nam dolorem aliquid perspiciatis? Harum!</h3>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12">
+              <ul class="timeline">
+                  <li>
+                      <div class="timeline-image">
+                          <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                      </div>
+                      <div class="timeline-panel">
+                          <div class="timeline-heading">
+                              <h4>2012-2014</h4>
+                              <h4 class="subheading">Our Humble Beginnings</h4>
+                          </div>
+                          <div class="timeline-body">
+                              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="timeline-inverted">
+                      <div class="timeline-image">
+                          <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                      </div>
+                      <div class="timeline-panel">
+                          <div class="timeline-heading">
+                              <h4>March 2015</h4>
+                              <h4 class="subheading">An Agency is Born</h4>
+                          </div>
+                          <div class="timeline-body">
+                              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                          </div>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="timeline-image">
+                          <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+                      </div>
+                      <div class="timeline-panel">
+                          <div class="timeline-heading">
+                              <h4>December 2017</h4>
+                              <h4 class="subheading">Transition to Full Service</h4>
+                          </div>
+                          <div class="timeline-body">
+                              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="timeline-inverted">
+                      <div class="timeline-image">
+                          <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
+                      </div>
+                      <div class="timeline-panel">
+                          <div class="timeline-heading">
+                              <h4>July 2019</h4>
+                              <h4 class="subheading">Phase Two Expansion</h4>
+                          </div>
+                          <div class="timeline-body">
+                              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="timeline-inverted">
+                      <div class="timeline-image">
+                          <h4>Be Part
+                              <br>Of Our
+                              <br>Story!</h4>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Contact Us</h2>
+              <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12">
+              <form method="post" id="contactForm" style="color: white;" >{%csrf_token%}
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              
+
+                              {{my_form.Your_name|as_crispy_field}}
+                          </div>
+                          <div class="form-group">
+
+                              {{my_form.Your_Email|as_crispy_field}}
+
+                          </div>
+                          <div class="form-group">
+
+                             {{my_form.Your_Phone|as_crispy_field}}
+
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+
+                              {{my_form.Your_Message|as_crispy_field}}
+
+                          </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="col-lg-12 text-center">
+                          <div id="success"></div>
+                          <button type="submit" class="btn btn-xl">Send Message</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+<!-- Portfolio Modals -->
+<!-- Use the modals below to showcase details about your portfolio projects! -->
+
+<!-- Portfolio Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+              <div class="rl">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                  <div class="modal-body">
+                      <!-- Project Details Go Here -->
+                      <h2>Project Name</h2>
+                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                      <img class="img-responsive" src="https://unsplash.imgix.net/uploads%2F1411419068566071cef10%2F7562527b?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=240c45655f09c546232a6f106688e502" alt="">
+                      <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                      <p>
+                          <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+                      <ul class="list-inline">
+                          <li>Date: July 2014</li>
+                          <li>Client: Round Icons</li>
+                          <li>Category: Graphic Design</li>
+                      </ul>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+              <div class="rl">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                  <div class="modal-body">
+                      <h2>Project Heading</h2>
+                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                      <img class="img-responsive img-centered" src="https://unsplash.imgix.net/44/9s1lvXLlSbCX5l3ZaYWP_hdr-1.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=f0a1db79752dbb04ec6d2aab7d17c7b0" alt="">
+                      <p><a href="https://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
+                      <p>You can preview Startup Framework <a href="https://designmodo.com/startup/?u=787">here</a>.</p>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+              <div class="rl">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                  <div class="modal-body">
+                      <!-- Project Details Go Here -->
+                      <h2>Project Name</h2>
+                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                      <img class="img-responsive img-centered" src="https://unsplash.imgix.net/46/Ov6ZY1zLTWmhPC0wFysP_IMG_2896_edt.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=6518e4df89659818f6c0392175a9c5e6" alt="">
+                      <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
+                      <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 4 -->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+              <div class="rl">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                  <div class="modal-body">
+                      <!-- Project Details Go Here -->
+                      <h2>Project Name</h2>
+                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                      <img class="img-responsive img-centered" src="https://unsplash.imgix.net/44/9s1lvXLlSbCX5l3ZaYWP_hdr-1.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=f0a1db79752dbb04ec6d2aab7d17c7b0" alt="">
+                      <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
+                      <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 5 -->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+              <div class="rl">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                  <div class="modal-body">
+                      <!-- Project Details Go Here -->
+                      <h2>Project Name</h2>
+                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                      <img class="img-responsive img-centered" src="https://unsplash.imgix.net/46/Ov6ZY1zLTWmhPC0wFysP_IMG_2896_edt.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=6518e4df89659818f6c0392175a9c5e6" alt="">
+                      <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
+                      <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 6 -->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+              <div class="rl">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                  <div class="modal-body">
+                      <!-- Project Details Go Here -->
+                      <h2>Project Name</h2>
+                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                      <img class="img-responsive img-centered" src="https://unsplash.imgix.net/uploads%2F1411419068566071cef10%2F7562527b?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=240c45655f09c546232a6f106688e502" alt="">
+                      <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
+                      <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- jQuery Version 1.11.0 -->
+<script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jquery-1.11.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/classie.js"></script>
+<script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/cbpAnimatedHeader.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jqBootstrapValidation.js"></script>
+<script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/contact_me.js"></script>
+
+
+<span style="height: 20px; width: 40px; min-height: 20px; min-width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=);"></span></body>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+
+<style>
+  #mi:hover{
+    color: white !important;
+
+  }
+</style>
+
+<!-- Footer -->
+<footer class="page-footer font-small dark" id="mi">
+<h1 style="text-shadow: 1px 1px white;" id="mi">Egypt <i id="mi" class="fas fa-grin-hearts" style="color: red;"></i> Fabrics</h1>
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+        
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+         
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+         
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+      
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+          explicabo.
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text"> </i>
+          </a>
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> egyptfabrics.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script><script  src="./script.js"></script>
+
+
+
+
+
+
+<script>
+
+  // Animate Smooth Scroll
+$('#view-work').on('click', function() {
+  const images = $('#images').position().top;
+
+  $('html, body').animate(
+    {
+      scrollTop: images
+    },
+    900
+  );
+});
+</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</body>
+</html>
+
+        
+{% endblock  %}

@@ -1,0 +1,679 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-02 23:37+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\Main\Untitled-1.txt:41 .\Main\templates\Main\product.html:958
+msgid "Price:"
+msgstr "السعر"
+
+#: .\Main\Untitled-1.txt:42 .\Main\templates\Main\product.html:959
+msgid "price by Egyptian pound"
+msgstr "السعر بالجينه المصرى"
+
+#: .\Main\Untitled-1.txt:46 .\Main\templates\Main\product.html:963
+#: .\Main\templates\Main\product36.html:119
+msgid "Prices and sizes"
+msgstr "الاسعار والاحجام"
+
+#: .\Main\Untitled-1.txt:53 .\Main\templates\Main\order_snippet.html:62
+#: .\Main\templates\Main\order_snippet.html:68
+#: .\Main\templates\Main\order_summary.html:44
+#: .\Main\templates\Main\order_summary.html:47
+#: .\Main\templates\Main\order_summary.html:71
+#: .\Main\templates\Main\order_summary.html:75
+#: .\Main\templates\Main\order_summary.html:80
+#: .\Main\templates\Main\product.html:970
+#: .\Main\templates\Main\product36.html:126
+msgid "LE"
+msgstr "جينه  مصرى"
+
+#: .\Main\forms.py:16 .\Main\models.py:40
+msgid "For Egypt Only"
+msgstr "مصر فقط"
+
+#: .\Main\forms.py:17
+msgid "6th of October"
+msgstr "السادس من أكتوبر"
+
+#: .\Main\forms.py:18
+msgid "Al Sharqia"
+msgstr "الشرقية"
+
+#: .\Main\forms.py:19
+msgid "alexandria"
+msgstr "الإسكندرية"
+
+#: .\Main\forms.py:20
+msgid "Aswan"
+msgstr "أسوان"
+
+#: .\Main\forms.py:21
+msgid "Asyut"
+msgstr "أسيوط"
+
+#: .\Main\forms.py:22
+msgid "Beheira"
+msgstr "البحيرة"
+
+#: .\Main\forms.py:23
+msgid "Beni Suef"
+msgstr "بنى سويف"
+
+#: .\Main\forms.py:24
+msgid "Cairo"
+msgstr "القاهرة"
+
+#: .\Main\forms.py:25
+msgid "Dakahlia"
+msgstr "الدقهلية"
+
+#: .\Main\forms.py:26
+msgid "Damietta "
+msgstr "دمياط"
+
+#: .\Main\forms.py:27
+msgid "Faiyum"
+msgstr "الفيوم"
+
+#: .\Main\forms.py:28
+msgid "Gharbia"
+msgstr "الغربية"
+
+#: .\Main\forms.py:29
+msgid "Giza"
+msgstr "الغربية"
+
+#: .\Main\forms.py:30
+msgid "Ismailia"
+msgstr "الإسماعيلية"
+
+#: .\Main\forms.py:31
+msgid "Kafr El Sheikh"
+msgstr "كفر الشيخ"
+
+#: .\Main\forms.py:32
+msgid "Luxor"
+msgstr "الأقصر"
+
+#: .\Main\forms.py:33
+msgid "Matruh"
+msgstr "مطروح"
+
+#: .\Main\forms.py:34
+msgid "Minya"
+msgstr "المنيا"
+
+#: .\Main\forms.py:35
+msgid "Monufia"
+msgstr "المنوفية"
+
+#: .\Main\forms.py:36
+msgid "New Valley"
+msgstr "الوادى الجديد"
+
+#: .\Main\forms.py:37
+msgid "North Sinai"
+msgstr "شمال سيناء"
+
+#: .\Main\forms.py:38
+msgid "Port Said"
+msgstr "بورسعيد"
+
+#: .\Main\forms.py:39
+msgid "Qalyubia "
+msgstr "القليوبية"
+
+#: .\Main\forms.py:40
+msgid "Qena"
+msgstr "قنا"
+
+#: .\Main\forms.py:41
+msgid "Red Sea"
+msgstr "البحر الأحمر"
+
+#: .\Main\forms.py:42
+msgid "Sharqia "
+msgstr "الشرقية"
+
+#: .\Main\forms.py:43
+msgid "Sohag"
+msgstr "سوهاج"
+
+#: .\Main\forms.py:44
+msgid "South Sinai"
+msgstr "جنوب سيناء"
+
+#: .\Main\forms.py:45
+msgid "Suez"
+msgstr "السويس"
+
+#: .\Main\forms.py:52 .\Main\templates\Main\checkout.html:33
+msgid "First Name"
+msgstr "الإسم الاول"
+
+#: .\Main\forms.py:57 .\Main\templates\Main\checkout.html:37
+msgid "Last Name"
+msgstr "إسم العائلة"
+
+#: .\Main\forms.py:64
+msgid "Mobile NO"
+msgstr "رقم هاتفك المحمول"
+
+#: .\Main\forms.py:67
+msgid "1234 Main St"
+msgstr "إسم الشارع"
+
+#: .\Main\forms.py:71
+msgid "Apartment or suite"
+msgstr "رقم الشقة"
+
+#: .\Main\forms.py:76
+msgid "(select country)"
+msgstr "برجاء إختيار دولتك"
+
+#: .\Main\forms.py:82 .\Main\templates\Main\checkout.html:83
+msgid "Zip code"
+msgstr "رقمك البريدى"
+
+#: .\Main\forms.py:177
+msgid "Your Name"
+msgstr "إسمك بالكامل"
+
+#: .\Main\forms.py:182
+msgid "Email"
+msgstr "الايميل الخاص بك"
+
+#: .\Main\forms.py:188
+msgid "Your Phone"
+msgstr "رقم الهاتف "
+
+#: .\Main\forms.py:193
+msgid "Your Message"
+msgstr "رسالتك"
+
+#: .\Main\templates\Main\BedSheet.html:15
+msgid "Egypt Fabrics | Sheets | BedSheets"
+msgstr "اغطية السرير - إيجيبت فابريكس"
+
+#: .\Main\templates\Main\BedSheet.html:193 .\Main\templates\Main\Book.html:89
+#: .\Main\templates\Main\Hospital.html:184
+#: .\Main\templates\Main\Petroleum.html:184
+#: .\Main\templates\Main\Pillows.html:171
+#: .\Main\templates\Main\RegularNavbar.html:574
+#: .\Main\templates\Main\Towels.html:184
+#: .\Main\templates\Main\product.html:1222
+msgid "Buy Now"
+msgstr "إشترى الان"
+
+#: .\Main\templates\Main\BedSheet.html:231 .\Main\templates\Main\Book.html:127
+#: .\Main\templates\Main\Hospital.html:222
+#: .\Main\templates\Main\Petroleum.html:222
+#: .\Main\templates\Main\Pillows.html:209 .\Main\templates\Main\Towels.html:222
+msgid "&laquo;"
+msgstr ""
+
+#: .\Main\templates\Main\BedSheet.html:232 .\Main\templates\Main\Book.html:128
+#: .\Main\templates\Main\Hospital.html:223
+#: .\Main\templates\Main\Petroleum.html:223
+#: .\Main\templates\Main\Pillows.html:210 .\Main\templates\Main\Towels.html:223
+msgid "Previous"
+msgstr "السابق"
+
+#: .\Main\templates\Main\BedSheet.html:239 .\Main\templates\Main\Book.html:135
+#: .\Main\templates\Main\Hospital.html:230
+#: .\Main\templates\Main\Petroleum.html:230
+#: .\Main\templates\Main\Pillows.html:217 .\Main\templates\Main\Towels.html:230
+msgid "(current)"
+msgstr "(الحالى)"
+
+#: .\Main\templates\Main\BedSheet.html:246 .\Main\templates\Main\Book.html:142
+#: .\Main\templates\Main\Hospital.html:237
+#: .\Main\templates\Main\Petroleum.html:237
+#: .\Main\templates\Main\Pillows.html:224 .\Main\templates\Main\Towels.html:237
+msgid "&raquo;"
+msgstr ""
+
+#: .\Main\templates\Main\BedSheet.html:247 .\Main\templates\Main\Book.html:143
+#: .\Main\templates\Main\Hospital.html:238
+#: .\Main\templates\Main\Petroleum.html:238
+#: .\Main\templates\Main\Pillows.html:225 .\Main\templates\Main\Towels.html:238
+msgid "Next"
+msgstr "التالى"
+
+#: .\Main\templates\Main\Book.html:15
+msgid "Egypt Fabrics | Products"
+msgstr "المنتجات| إيجيبت فابريكس"
+
+#: .\Main\templates\Main\Contact.html:8
+msgid "Egypt Fabrics | Contact"
+msgstr "تواصل معنا"
+
+#: .\Main\templates\Main\Contact.html:55
+msgid "Contact Us"
+msgstr "تواصل معنا"
+
+#: .\Main\templates\Main\Contact.html:61
+#: .\Main\templates\Main\checkout.html:131
+msgid "Submit"
+msgstr "سجل"
+
+#: .\Main\templates\Main\Home.html:14 .\Main\templates\Main\product.html:20
+#: .\Main\templates\Main\product36.html:20
+msgid "Egypt Fabrics"
+msgstr "إيجيبت فابريكس"
+
+#: .\Main\templates\Main\Home.html:42
+msgid "Cotton Bath Towels"
+msgstr "فوط إستحمام من القطن"
+
+#: .\Main\templates\Main\Home.html:44
+#, python-format
+msgid ""
+"Add a touch of luxury to your bathroom . Our Towels are made from 100%% "
+"Egyptian cotton, the towel has gone through a special combing process to "
+"achieve a super soft and absorbent pile.We guarntee a quality towel for the "
+"ultimate bath time experience."
+msgstr ""
+" أضف لمسة من الفخامة إلى حمامك. المناشف الخاصة بنا مصنوعة من القطن المصري "
+"100٪.  تمر المنشفة بعملية تمشيط خاصة لتحقيق نسيج فائق النعومة و الإمتصاص  "
+"نضمن لكِ منشفة عالية الجودة لتجربة إستحمام لا مثيل لها"
+
+#: .\Main\templates\Main\Home.html:60
+msgid "The Oxford pillow case"
+msgstr "غطاء مخدات أكسفورد"
+
+#: .\Main\templates\Main\Home.html:63
+#, python-format
+msgid ""
+"The Oxford pillow cases set is the Fancy version of the standard pillow "
+"case, and is made with an additional fabric border which surrounds all four "
+"edges of the standard case.Spoil yourself and order yours now.100%% Sateen "
+"Cotton 400TC."
+msgstr ""
+"مجموعة أكياس وسائد أكسفورد هي الإصدار الفاخر من كيس الوسادة القياسي مصنوعة "
+"بأطراف قماشية إضافية تحيط بالأطراف الأربعة لكيس الوسادة القياسي100% قطن "
+"ستانية  - 400 عقدة في البوصة دلل نفسك. قم بالطلب الآن"
+
+#: .\Main\templates\Main\Home.html:75
+msgid "Percale Sheets"
+msgstr "أغطية بريكال"
+
+#: .\Main\templates\Main\Home.html:77
+#, python-format
+msgid ""
+"Dreaming about sleeping on five-star hotel-quality sheets? Then you’re "
+"thinking about percale sheets 🛏️ Percale are smooth, luxurious & made of "
+"breathable 100 %% cotton."
+msgstr ""
+"هل تحلم بالنوم على ملاءات عالية الجودة كفنادق الخمس نجوم؟ إذن أنت تفكر في "
+"ملاءات البركال البركال الناعم و الفاخر و مصنوع من قطن 100٪ قابل للتنفس"
+
+#: .\Main\templates\Main\Home.html:92 .\Main\templates\Main\Home.html:322
+msgid "Sateen Fitted Sheet Set 400TC"
+msgstr "طاقم ملاءات ستانية 400 عقدة في البوصة"
+
+#: .\Main\templates\Main\Home.html:97
+msgid ""
+"Sateen sheets are 100 percent cotton sheets with a high thread count and a "
+"lustrous sheen. They are woven from combed, carded, or long-fiber cotton "
+"threads that are then mercerized, meaning they’re soaked in lye and then in "
+"acid. This process not only strengthens the cotton fibers and makes them "
+"more durable, but also gives sateen sheets their signature  sheen and helps "
+"them accept dye evenly. "
+msgstr ""
+"الملاءات الستانية هي ملاءات قطنية بنسبة مائة في المائة مصنعة من عدد خيوط "
+"عالية و لمعان مشرق.يتم نسجها من خيوط قطنية ممشطة أو طويلة الألياف يتم بعد "
+"ذلك مما يعني أنها منقوعة في الغسول الخاص بها ثم تنقعبالمحلول الحامض.هذه "
+"العملية لا تقوي فقط ألياف القطن وتصنعهاأكثر متانة ، ولكن أيضًا يعطي أوراق "
+"الساتين لمعانها المميز ويساعدها على قبول الصبغة بالتساوي."
+
+#: .\Main\templates\Main\Home.html:115
+msgid "Classic Cotton Duvet Cover 500TC"
+msgstr " غطاء لحاف كلاسيكي من القطن 500 عقدة في البوصة"
+
+#: .\Main\templates\Main\Home.html:119
+msgid ""
+"A duvet cover is a protective layer that slips over the duvet and has a "
+"closure. Because duvets can be expensive and difficult to clean, duvet "
+"covers are useful because they protect your duvet or quilt during use and "
+"are easily removed and easy to wash."
+msgstr ""
+"غطاء اللحاف هو طبقة حماية تنزلق فوق اللحاف ولها مكان للإغلاق.قد تكون الألحفة "
+"باهظة الثمن وصعبة التنظيف.الأغطية مفيدة لأنها تحمي لحافك أثناء الاستخدام "
+"ويمكن إزالتها بسهولة وغسلها."
+
+#: .\Main\templates\Main\Home.html:154
+
+msgid "100%% Organic Egyptian Cotton "
+msgstr " قطن مصرى عضوي  %100"
+
+#: .\Main\templates\Main\Home.html:156 .\Main\templates\Main\Home.html:170
+#: .\Main\templates\Main\Home.html:180
+msgid "Shop Now"
+msgstr "تسوق الأن"
+
+#: .\Main\templates\Main\Home.html:168 .\Main\templates\Main\Home.html:179
+
+msgid "100%% Egyptian Cotton "
+msgstr " قطن مصرى  %100"
+
+#: .\Main\templates\Main\Home.html:193
+msgid "Popular Categories"
+msgstr "المنتجات الأكثر شعبية"
+
+#: .\Main\templates\Main\Home.html:252
+msgid "Best Selling Products"
+msgstr "المنتجات الأفضل مبيعاً"
+
+#: .\Main\templates\Main\Home.html:312
+msgid "Pure White Sateen Duvet Set"
+msgstr "طقم لحاف ساتين أبيض نقي"
+
+#: .\Main\templates\Main\Home.html:313
+#, python-format
+msgid ""
+"100%% Lyocell. Sateen-woven bed linen in lyocell has a pronounced luster, "
+"feels soft as silk and is pleasant to sleep in. The decorative embroidery "
+"makes the pattern and colors come alive"
+msgstr " تتميز بياضات السرير الساتينية المصنوعة من اللايوسل 100% ببريق واضح،ملمس "
+"ناعم كالحرير و لطيف للنوم فيه.التطريز المزخرف يجعل النقوش والألوان به تنبض "
+"بالحياة"
+
+#: .\Main\templates\Main\Home.html:317 .\Main\templates\Main\Home.html:326
+msgid "Go To Shop"
+msgstr "الذهاب إلى التسوق"
+
+#: .\Main\templates\Main\Home.html:323
+msgid ""
+"Rest easy with this hemstitch solid color sheet set. Constructed with a "
+"cotton sateen weave, this 400 thread count set features a lustrous, "
+"lightweight feel. Choose from a variety of rich colors to complement a "
+"modern or cottage bedroom vibe."
+msgstr ""
+"استرخي مع مجموعة ملاءاتذات الألوان السادة المصنوعة من نسيج الساتين القطنيهذه "
+"المجموعة المكونة من 400 خيط تتميز بالراحة و الوزن الخفيف. اختر من بين مجموعة "
+"متنوعة من الألوان الغنية لتتناغم مع أجواء غرفة النوم الحديثة "
+
+#: .\Main\templates\Main\Home.html:362
+msgid "Connect Socially"
+msgstr "تواصل معنا عبر مواقع التواصل الإجتماعى"
+
+#: .\Main\templates\Main\Hospital.html:15 .\Main\templates\Main\Towels.html:15
+msgid "Egypt Fabrics | Towels"
+msgstr "فوط - إيجيبت فابريكس"
+
+#: .\Main\templates\Main\Petroleum.html:15
+msgid "Egypt Fabrics | Petroleum"
+msgstr "شركات البترول - إيجيبت فابريكس"
+
+#: .\Main\templates\Main\Pillows.html:15
+msgid "Egypt Fabrics | Pillowcases"
+msgstr "اغطية المخدات  - إيجيبت فابريكس"
+
+#: .\Main\templates\Main\RegularNavbar.html:212
+msgid " Home "
+msgstr "الصفحة الرئيسية"
+
+#: .\Main\templates\Main\RegularNavbar.html:214
+msgid "About"
+msgstr "عنا"
+
+#: .\Main\templates\Main\RegularNavbar.html:216
+msgid "Contact"
+msgstr "تواصل معنا"
+
+#: .\Main\templates\Main\RegularNavbar.html:218
+msgid "Products"
+msgstr "منتاجاتنا"
+
+#: .\Main\templates\Main\RegularNavbar.html:231
+msgid "Varieties"
+msgstr "منتاجاتنا المتنوعة"
+
+#: .\Main\templates\Main\RegularNavbar.html:232
+msgid "Towels"
+msgstr "فوط"
+
+#: .\Main\templates\Main\RegularNavbar.html:233
+msgid "Bedsheet Sets"
+msgstr "اطقم اغطية للسرير"
+
+#: .\Main\templates\Main\RegularNavbar.html:234
+msgid "Pillowcases"
+msgstr "اغطية المخدات"
+
+#: .\Main\templates\Main\RegularNavbar.html:235
+msgid "Petrol"
+msgstr "شركات البترول"
+
+#: .\Main\templates\Main\RegularNavbar.html:236
+msgid "Hospital"
+msgstr "مستشفيات"
+
+#: .\Main\templates\Main\RegularNavbar.html:451
+msgid "Type &amp; Hit Enter.."
+msgstr "ابحث"
+
+#: .\Main\templates\Main\about.html:19
+msgid "Egypt Fabrics | About"
+msgstr "عن - إيجيبت فابريكس"
+
+#: .\Main\templates\Main\about.html:64
+msgid "Our Mission"
+msgstr "مهمتنا"
+
+#: .\Main\templates\Main\about.html:65
+msgid ""
+" We focus exclusively on Egyptian coton for a whole bunch of great reasons, "
+"But when it comes right down to it, we just love the way our products look "
+"and feel. Our products are made with quality materials, high production "
+"standards, and ethical manufacturing practices. We’ve met all of our "
+"production partners in person and pride ourselves on these relationships "
+"with quality manufacturers around the world."
+msgstr ""
+"بشكل حصري نركز على القطن المصري لمجموعة كاملة من الأسباب،ولكن عندما يتعلق "
+"الأمر بذلك، فإننا نحب الطريقة التي تبدو بها منتجاتنا.منتجاتنا مصنوعة من مواد "
+"عالية الجودة و إنتاج عالي المعايير وممارسات التصنيع الأخلاقية. لقد التقينا "
+"بكل من شركاء الإنتاج شخصيًا ونفخر بأنفسنا على هذه العلاقات مع الشركات المصنعة "
+"عالية الجودة في جميع أنحاء العالم"
+
+#: .\Main\templates\Main\about.html:95
+msgid "Our Vision"
+msgstr "رؤيتنا"
+
+#: .\Main\templates\Main\about.html:96
+msgid ""
+"\n"
+"                    Egypt Fabrics believes everyone should live in a home "
+"they love. Through technology and innovation, Egypt Fabrics makes it "
+"possible for shoppers to quickly and easily find exactly what they want from "
+"a selection of high quality products. Committed to delighting its customers "
+"every step of the way, Egypt Fabrics is reinventing the way people shop for "
+"their Homes/Bed rooms - from product discovery to final delivery."
+msgstr ""
+"أقمشة ايجيبت فابريكس تؤمن بأن الجميع يجب أن يعيش في منزل يحبونه.من خلال "
+"التكنولوجيا والإبتكار، تبدع شركة ايجيبت فابريكس في كل خطوة على الطريق ، تعيد "
+"إيجيبت فابريكس ابتكار طريقة تسوق الناس لمنازلهم/لغرف نومهم - من إكتشاف "
+"المنتج إلى التسليم النهائي "
+
+#: .\Main\templates\Main\about.html:135
+msgid "Seed-to-Stitch"
+msgstr "من البذرة إلى الحياكة"
+
+#: .\Main\templates\Main\about.html:137
+msgid ""
+"\n"
+"                    Our sheets are what we call 'seed-to-stitch'. made in "
+"the Egypt. The entire manufacturing process and every single part of our "
+"product - from growing the cotton, to spinning the yarn, to weaving the "
+"fabric, to our military-grade fabrics, recycled packaging, and woven tags - "
+"is made here in Egypt. "
+msgstr "'أوراقنا هي ما نسميه 'من البذرة إلى الحياكة. صنع في مصر عملية التصنيع "
+"بأكملها وكل جزء من أجزاء المنتج - من زراعة القطن إلى غزل الخيط ونسج النسيج ، "
+"للأقمشة ، والتعبئة المعاد تدويرها ، والعلامات المنسوجة صنع هنا في مصر "
+
+#: .\Main\templates\Main\checkout.html:12
+msgid "Egypt Fabrics | Shipping Details"
+msgstr "بيانات الشحن "
+
+#: .\Main\templates\Main\checkout.html:20
+msgid "Shipping Form"
+msgstr "نموذج الشحن"
+
+#: .\Main\templates\Main\checkout.html:27
+msgid "Shipping Details"
+msgstr "بيانات الشحن"
+
+#: .\Main\templates\Main\checkout.html:45
+msgid "Email(optional)"
+msgstr "بريدك الالكترونى - إختيارى"
+
+#: .\Main\templates\Main\checkout.html:49
+msgid "Mobile"
+msgstr "رقم هاتفك المحمول"
+
+#: .\Main\templates\Main\checkout.html:62
+msgid "Street"
+msgstr "الشارع"
+
+#: .\Main\templates\Main\checkout.html:67
+msgid "Apartment"
+msgstr "شقة"
+
+#: .\Main\templates\Main\checkout.html:75
+msgid "Country"
+msgstr "دولة"
+
+#: .\Main\templates\Main\checkout.html:78
+msgid "Please select a valid country."
+msgstr "برجاء إختيار دولتك"
+
+#: .\Main\templates\Main\checkout.html:86
+msgid "Please select a valid zip."
+msgstr "برجاء إختيار رقم بريدي صحيح"
+
+#: .\Main\templates\Main\checkout.html:90
+msgid "Governates"
+msgstr "المحافظة"
+
+#: .\Main\templates\Main\checkout.html:93
+msgid " Please select a valid zip."
+msgstr "برجاء إختيار رقم بريدي صحيح"
+
+#: .\Main\templates\Main\order_snippet.html:52
+msgid "Types In Your Cart"
+msgstr "الأنواع فى عربتك"
+
+#: .\Main\templates\Main\order_snippet.html:67
+msgid "Total"
+msgstr "الإجمالى"
+
+#: .\Main\templates\Main\order_summary.html:8
+#: .\Main\templates\Main\ordersummary2.html:8
+msgid "Egypt Fabrics | Order Summary"
+msgstr "ملخص الاورد الخاص بك | ايجيبت فابريكس"
+
+#: .\Main\templates\Main\order_summary.html:17
+msgid "Item Title"
+msgstr " إسم المنتج"
+
+#: .\Main\templates\Main\order_summary.html:18
+msgid "Price"
+msgstr "السعر"
+
+#: .\Main\templates\Main\order_summary.html:19
+msgid "Quantity"
+msgstr "الكمية"
+
+#: .\Main\templates\Main\order_summary.html:20
+msgid "Size"
+msgstr "المقاس"
+
+#: .\Main\templates\Main\order_summary.html:21
+msgid "Total Item Price"
+msgstr "إجمالى سعر القطع"
+
+#: .\Main\templates\Main\order_summary.html:45
+
+msgid "Saving LE"
+msgstr "قمت بتوفير"
+
+#: .\Main\templates\Main\order_summary.html:56
+msgid "Your Cart is Empty"
+msgstr "عربتك فارغة"
+
+#: .\Main\templates\Main\order_summary.html:60
+#: .\Main\templates\Main\order_summary.html:84
+msgid "Continue Shopping"
+msgstr "واصل التسوق"
+
+#: .\Main\templates\Main\order_summary.html:65
+msgid "Coupon"
+msgstr "كوبون"
+
+#: .\Main\templates\Main\order_summary.html:66
+
+msgid "-LE"
+msgstr " -جم"
+
+#: .\Main\templates\Main\order_summary.html:70
+msgid "Sub total"
+msgstr "الاجمالى الفرعى"
+
+#: .\Main\templates\Main\order_summary.html:74
+msgid "Taxes"
+msgstr "الضرائب"
+
+#: .\Main\templates\Main\order_summary.html:85
+msgid "Proceed to Checkout"
+msgstr "واصل لإتمام الأوردر"
+
+#: .\Main\templates\Main\product.html:980
+#: .\Main\templates\Main\product36.html:139
+msgid "Add To Cart"
+msgstr "أضف إلى السلة"
+
+#: .\Main\templates\Main\product.html:1075
+msgid "RELATED PRODUCTS"
+msgstr "منتجات ذات صلة "
+
+#: .\Main\templates\Main\product36.html:155
+msgid "Product Description"
+msgstr "وصف المنتج"
+
+#: .\Main\templates\Main\thankyou.html:8
+msgid "Egypt Fabrics | Thanks"
+msgstr "شكرًا جزيلًا | ايجيبت فابريكس"
+
+#: .\Main\templates\Main\thankyou.html:161
+msgid "Thank You for Your order!"
+msgstr "!شكرا جزيلا لاختيارك ايجيبت فابريكس"
+
+#: .\Main\templates\Main\thankyou.html:162
+msgid "Having trouble? "
+msgstr "تواجه صعوبة"
+
+#: .\Main\templates\Main\thankyou.html:162
+msgid "Contact us"
+msgstr "تواصل معنا"
+
+#: .\Main\templates\Main\thankyou.html:163
+msgid "Continue to homepage"
+msgstr "الذهاب إلى الصفحة الرئيسية"

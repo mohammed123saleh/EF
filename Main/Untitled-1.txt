@@ -1,0 +1,100 @@
+
+<main class="mo">
+  <div class="container">
+    <div class="grid second-nav">
+      <div class="column-xs-12">
+        <nav>
+          <ol class="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="#"></a></li>
+            <li class="breadcrumb-item"><a href="#"> </a></li>
+            <li class="breadcrumb-item active"></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="grid product">
+      <div class="column-xs-12 column-md-7">
+        <div class="product-gallery">
+          <div class="product-image">
+
+            
+            <img class="active" src="{{object.image.url}}">
+          </div>
+          <ul class="image-list">
+       
+            <li class="image-item"><img src="{{object.image.url}}"></li>
+            {% if object.image2 %}
+         
+            <li class="image-item"><img src="{{object.image2.url}}"></li>
+                 
+            {% endif %}
+
+            {% if object.image3 %}
+            <li class="image-item"><img src="{{object.image3.url}}"></li>
+                      
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="column-xs-12 column-md-5">
+        <h1>{{object.title}}</h1>
+        <h2>{% trans "Price:" %} {{object.price}}0</h2>
+        <p style="text-transform: capitalize; font-size: 8px; padding-left: 3px;">{% trans "price by Egyptian pound" %}</p>
+        
+
+ <div class="col-md-10 pull-left">
+    <h2  style="background-color: brown; color:white; text-align: center; padding: 6px !important;">{% trans "Prices and sizes" %}</h2> 
+    <form action="{{ object.get_add_to_cart_url }}" method="POST" name="object.get_add_to_cart_url"> {% csrf_token %}
+      {% if object.variation_set.all %}
+        
+     
+      <select name="size" class="form-control form-control-lg" style="color: white !important;">
+        {% for ite in object.variation_set.all %}
+        <option value="{{ite.pricy}}      {{ite.Title}}" > {{ite.Title}} - {% trans "LE" %} {{ite.pricy}}0</option>
+        {% endfor %}
+      </select>
+      {% endif %}
+    
+    </div>
+    <tr>
+      <br>
+      <br>
+
+
+  
+  <br>
+  <br>
+
+
+
+  <a id="btcl" href="{{ object.get_add_to_cart_url }}">
+    <button  id="btcl" class="add-to-cart">Add To Cart</button></a>
+        
+        <div class="description">
+         
+          <p>{{object.description|safe}}</p>
+        </div>
+
+ 
+
+
+
+
+
+
+
+
+ 
+<style>
+
+  #btcl:hover{
+    color: black !important;
+  
+  }
+  </style>
+
+      </div>
+    </div>
+
+  </div>
+</main>
