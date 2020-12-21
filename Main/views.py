@@ -674,8 +674,8 @@ def add_to_cart(request, slug):
 
 
         if len(item_var) > 0:
-            for item in item_var:
-                order_item_qs = order_item_qs.filter(variation__exact=item)
+            for it_var in item_var:
+                order_item_qs = order_item_qs.filter(variation__exact=it_var)
 
 
     if order_item_qs.exists():
